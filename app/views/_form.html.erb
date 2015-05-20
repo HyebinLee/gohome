@@ -1,0 +1,39 @@
+<style type="text/css">
+a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
+</style>
+
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">gohome</h1>
+
+<table width=100% align=center><tr>
+<td><a><%=link_to '', controller: 'first' do%>
+  <div style="font-family:courier;display:inline">HOME</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'shop', controller: 'shop' do%>
+  <div style="font-family:courier;display:inline">SHOP</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'notice', controller: 'notice' do%>
+  <div style="font-family:courier;display:inline">NOTICE</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'review', controller: 'review' do%>
+  <div style="font-family:courier;display:inline">REVIEW</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'cart', controller: 'cart' do%>
+  <div style="font-family:courier;display:inline">CART</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'mypage', controller: 'mypage' do%>
+  <div style="font-family:courier;display:inline">MYPAGE</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'join', controller: 'join' do%>
+  <div style="font-family:courier;display:inline">JOIN</div>
+<% end %> </a></td>
+
+<td><a><%=link_to 'login', controller: 'login' do%>
+  <div style="font-family:courier;display:inline">LOGIN</div>
+<% end %> </a></td>
+</tr></table>
