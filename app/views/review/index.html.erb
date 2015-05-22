@@ -2,14 +2,14 @@
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">REVIEW</h1>
 
 <p style="text-align:right"><%=link_to '글쓰기', new_review_path %></p>
-<table width=100% align=center>
-  <tr>
-    <th>NO</th>
-    <th>PRODUCT</th>
-    <th>SUBJECT</th>
-    <th>NAME</th>
-    <th>DATE</th>
-    <th>평점</th>
+<table width=100% align=center rules="rows" style="rule-color:grey">
+  <tr style="border-bottom: 2px solid black">
+    <td>NO</td>
+    <td>PRODUCT</td>
+    <td>SUBJECT</td>
+    <td>NAME</td>
+    <td>DATE</td>
+    <td>평점</td>
   </tr>
 
   <% @review.each do |review| %>

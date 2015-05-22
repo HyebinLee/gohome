@@ -1,10 +1,18 @@
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">REVIEW</h1>
 
-<table rules="rows" width="100%" align="center" style="border:grey">
+<table align="right">
+  <tr style="text-align:right">
+    <td width=40><%=link_to '수정', edit_review_path(@review) %></td>
+    <td width=40><%=link_to '삭제', review_path(@review), method: :delete %></td>
+  </tr>
+</table>
+
+<table rules="rows" width="100%"  style="border:grey;text-align:left">
   <tr>
     <td>PRODUCT</td>
-    <td style="color:grey"><%=@review.product%></td>
+    <th ColSpan="3" style="color:grey;font-weight:lighter">
+      <%=@review.product%></th>
   </tr>
   <tr>
     <td>SUBJECT</td>
@@ -14,7 +22,8 @@
   </tr>
   <tr>
     <td>NAME</td>
-    <td style="color:grey"><%=@review.name%></td>
+    <th ColSpan="3" style="color:grey;font-weight:lighter">
+      <%=@review.name%></th>
   </tr>
   <tr>
     <td>DATE</td>
@@ -23,8 +32,9 @@
     <td style="color:grey"><%=@review.star%> / 5.0</td>
   </tr>
   <tr>
-    <td style="color:grey"><%=@review.text%></td>
+    <th ColSpan="4" style="color:grey;font-weight:lighter">
+      <%=@review.text%></th>
   </tr>
 </table>
 
-<br><p style="text-align:center"><%=link_to '목록', '/review'%></p>
+<br><p style="text-align:center"><%=link_to '목록', review_index_path%></p>
