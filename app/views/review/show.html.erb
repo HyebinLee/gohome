@@ -1,0 +1,30 @@
+<%=render './form' %>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">REVIEW</h1>
+
+<table rules="rows" width="100%" align="center" style="border:grey">
+  <tr>
+    <td>PRODUCT</td>
+    <td style="color:grey"><%=@review.product%></td>
+  </tr>
+  <tr>
+    <td>SUBJECT</td>
+    <td style="color:grey"><%=@review.subject%></td>
+    <td>NUM</td>
+    <td style="color:grey"><%=@review.num%></td>
+  </tr>
+  <tr>
+    <td>NAME</td>
+    <td style="color:grey"><%=@review.name%></td>
+  </tr>
+  <tr>
+    <td>DATE</td>
+    <td style="color:grey"><%=@review.date%></td>
+    <td>평점</td>
+    <td style="color:grey"><%=@review.star%> / 5.0</td>
+  </tr>
+  <tr>
+    <td style="color:grey"><%=@review.text%></td>
+  </tr>
+</table>
+
+<br><p style="text-align:center"><%=link_to '목록', '/review'%></p>

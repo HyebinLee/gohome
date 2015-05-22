@@ -1,0 +1,41 @@
+<%=render './form' %>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">REVIEW</h1>
+<%= form_for :review, url: './' do |f| %> 
+  <div>
+    <%= f.label :num %><br>
+    <%= f.text_field :num %>
+  </div>
+ 
+  <div>
+    <%= f.label :product %><br>
+    <%= f.text_area :product %>
+  </div>
+ 
+  <div>
+    <%= f.label :subject %><br>
+    <%= f.text_area :subject %>
+  </div> 
+  <div>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+  
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div> 
+
+  <div>
+    <%= f.label :date %><br>
+    <%= f.text_area :date %>
+  </div>
+
+  <div>
+    <%= f.label :star %><br>
+    <%= f.text_area :star %>
+  </div>
+
+  <p>
+    <%= f.submit '등록'%>
+  </p>
+<% end %>
