@@ -1,5 +1,4 @@
 <%= render './form' %>
-<%= form_for :join, url: join_path do |f| %>
 <form>
 <div align = "center" style = "margin-top : 100px">
 	<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">JOIN</h1>
@@ -18,17 +17,18 @@
 	</div><div style = "margin-top : 10px">
 	주소			<input type="text" name="address"><br>
 	</div>
+</div>
 </form>
 <form>
 	<div align = "center">
-		</div><div style = "margin-top : 20px">
+		<div style = "margin-top : 20px">
 		<input type="checkbox" name="agree">이용약관에 동의합니다.<br>
 		</div><div style = "margin-top : 10px">
 		<input type="checkbox" name="agree2">개인정보 취급방침에 동의합니다.<br>
 		</div><div style = "margin-top : 20px">
-		<input type="submit"><%=link_to '가입하기', join_index_path(join) %>
+		<input type="submit" value="가입하기">
 		</div>
-	</div></div>
+	</div>
 </form>
 
 <p>Find me in app/views/join/index.html.erb</p>

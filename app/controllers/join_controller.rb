@@ -1,8 +1,12 @@
 class JoinController < ApplicationController
+  def index
+   @join = Join.all
+  end
   def show
 	@join = Join.find(params[:id])
   end
   def new
+    @join = Join.new
   end
   def create
     @join=Join.new(join_params)
