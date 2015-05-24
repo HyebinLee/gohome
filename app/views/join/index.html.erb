@@ -1,34 +1,35 @@
-<%=render './form' %>
-
+<%= render './form' %>
+<%= form_for :join, url: join_path do |f| %>
 <form>
 <div align = "center" style = "margin-top : 100px">
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">JOIN</h1>
-이름<input type="text" maxlength=20 name="username"><br>
-<div style = "margin-top : 10px">
-아이디<input type="text" maxlength=20 name="userid"><br>
-</div><div style = "margin-top : 10px">
-생년월일<input type="text" size=2 maxlength=4 name="year">
+	<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">JOIN</h1>
+
+	이름<input type="text" maxlength=20 name="name"><br>
+	<div style = "margin-top : 10px">
+	아이디<input type="text" maxlength=20 name="uid"><br>
+	</div><div style = "margin-top : 10px">
+	생년월일<input type="text" size=2 maxlength=4 name="year">
 				<input type="text" size=1 maxlength=2 name="month">
 				<input type="text" size=1 maxlength=2 name="day"><br>
-</div><div style = "margin-top : 10px">
-비밀번호<input type="text" maxlength=20 name="userpwd"><br>
-</div><div style = "margin-top : 10px">
-비밀번호확인<input type="text" maxlength=20 name="userpwd2"><br>
-</div><div style = "margin-top : 10px">
-주소			<input type="text" name="address"><br>
-</div>
+	</div><div style = "margin-top : 10px">
+	비밀번호<input type="text" maxlength=20 name="pwd"><br>
+	</div><div style = "margin-top : 10px">
+	비밀번호확인<input type="text" maxlength=20 name="re_pwd"><br>
+	</div><div style = "margin-top : 10px">
+	주소			<input type="text" name="address"><br>
+	</div>
 </form>
 <form>
-<div align = "center">
-</div><div style = "margin-top : 20px">
-<input type="checkbox" name="agree">이용약관에 동의합니다.<br>
-</div><div style = "margin-top : 10px">
-<input type="checkbox" name="agree2">개인정보 취급방침에 동의합니다.<br>
-</div><div style = "margin-top : 20px">
-<input type="submit" value="가입하기">
-</div></div>
-
-</div>
+	<div align = "center">
+		</div><div style = "margin-top : 20px">
+		<input type="checkbox" name="agree">이용약관에 동의합니다.<br>
+		</div><div style = "margin-top : 10px">
+		<input type="checkbox" name="agree2">개인정보 취급방침에 동의합니다.<br>
+		</div><div style = "margin-top : 20px">
+		<input type="submit"><%=link_to '가입하기', join_index_path(join) %>
+		</div>
+	</div></div>
 </form>
 
 <p>Find me in app/views/join/index.html.erb</p>
+
