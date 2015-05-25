@@ -1,6 +1,6 @@
 class JoinController < ApplicationController
   def index
-   @join = Join.all
+   @join = Join.new
   end
   def show
 	@join = Join.find(params[:id])
@@ -20,6 +20,8 @@ class JoinController < ApplicationController
 
   private
    def join_params
-	  params.require(:join).permit(:name, :uid, :year,:month,:day, :pwd,:re_pwd,:address)
-	end
+	  params.require(:join).permit(:name, :userid, :birth, :pwd,:address)
+   end
 end
+
+
