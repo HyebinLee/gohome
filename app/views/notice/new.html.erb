@@ -1,0 +1,27 @@
+<%=render './form' %>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">NOTICE</h1>
+<%= form_for :notice, url: notice_index_path do |f| %>
+<table width="100%" border="1">
+  <tr>
+    <td><%= f.label :date %></td>
+    <td><%= Time.now.strftime("%Y-%m-%d") %></td>
+  </tr>
+ 
+  <tr>
+    <td><%= f.label :subject %></td>
+    <td><%= f.text_field :subject, :style => "width:100%;border:0" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :text %></td>
+    <td><%= f.text_area :text, :style => "width:100%;border:0" %></td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr style="text-align:center">
+    <td width=40><%=link_to '이전', notice_index_path %></td>
+    <td width=40><%= f.submit '등록'%></td>
+  </tr>
+</table>
+<% end %>

@@ -1,0 +1,27 @@
+<%=render './form' %>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">NOTICE</h1>
+
+
+<table rules="rows" width="100%"  style="border:grey;text-align:left">
+  <tr>
+    <td>NUM</td>
+    <th ColSpan="3" style="color:grey;font-weight:lighter">
+      <%=@notice.num%></th>
+  </tr>
+  <tr>
+    <td>NAME</td>
+    <td style="color:grey"><%=@notice.name%></td>
+    <td>DATE</td>
+    <td style="color:grey"><%=@notice.date%></td>
+  </tr>
+  <tr>
+    <th ColSpan="3" style="color:grey;font-weight:lighter">
+      <%=@notice.subject%></th>
+  </tr>
+  <tr>
+    <th ColSpan="3" style="color:grey;font-weight:lighter">
+      <%=@notice.text%></th>
+  </tr>
+</table>
+
+<br><p style="text-align:center"><%=link_to '목록', notice_index_path%></p>

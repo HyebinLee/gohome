@@ -1,3 +1,21 @@
 <%=render './form' %>
-<h1>Notice Page</h1>
-<p>Find me in app/views/notice/index.html.erb</p>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">NOTICE</h1>
+
+<p style="text-align:right"><%=link_to '글쓰기', new_notice_path %></p>
+<table width=100% align=center rules="rows" style="rule-color:grey">
+  <tr style="border-bottom: 2px solid black">
+    <td>NO</td>
+    <td>NAME</td>
+    <td>SUBJECT</td>
+    <td>DATE</td>
+  </tr>
+
+  <% @notice.each do |notice| %>
+    <tr>
+      <td><%= notice.num %></td>
+      <td><%= notice.name %></td>
+      <td><%= link_to notice.subject, notice_path(notice) %></td>
+      <td><%= notice.date %></td>
+    </tr>
+  <% end %>
+</table>
