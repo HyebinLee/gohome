@@ -10,7 +10,24 @@ a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
 <% end %> </a></td>
 
 <td><a><%=link_to shop_index_path, controller: 'shop' do%>
-  <div style="font-family:courier;display:inline">SHOP</div>
+  <select name="SHOP">
+    <option value="">SHOP</option>
+    <option value="1">Dining Room</option>
+    <optgroup label="Room"/>
+      <option value="2"/>쇼파</option>
+      <option value="3"/>침대</option>
+      <option value="4"/>기타</option>
+    </optgroup>
+    <option value="5">Bath Room</option>
+    <option value="6">베란다</option>
+    <option value="7">Idea 소품</option>
+    <optgroup label="청소용품"/>
+      <option value="8">휴지통</option>
+      <option value="9">클리너</option>
+      <option value="10">기타</option>
+    </optgroup>
+    <option value="11">키즈용품</option>
+  </select>
 <% end %> </a></td>
 
 <td><a><%=link_to notice_index_path, controller: 'notice' do%>
