@@ -1,5 +1,6 @@
 class JoinController < ApplicationController
-  def index
+
+	def index
    @join = Join.new
   end
   def show
@@ -14,7 +15,7 @@ class JoinController < ApplicationController
 	 if @join.save
 	   redirect_to @join
 	 else
-	   render 'new'
+	   render 'show'
 	 end
   end
 

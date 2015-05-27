@@ -1,5 +1,14 @@
 <%=render './form' %>
-<table width="100%"  style="text-align:left;margin-top:100px">
+
+<% if @join.errors.any? %>
+<div id="error_explanation"> 
+<ul> 
+<% @join.errors.full_messages.each do |msg| %>   
+<li><%= msg %></li> 
+<% end %>  
+</ul>  
+</div>  
+<% else %>
   <tr>
     <td>이름</td>
     <th style="color:grey;font-weight:lighter">
@@ -21,5 +30,6 @@
     </th>
   </tr>
 </table>
+<% end %>
+<br><div style="text-align:center"><%=link_to '다시 가입',join_index_path %><div style = "margin-right : 10px"><%= link_to '홈으로', root_path %></div>
 
-<br><div style="text-align:center"><%= link_to '홈으로', root_path %></div>

@@ -1,23 +1,20 @@
 <%=render './form' %>
 <!--<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LogIn</h1>
 --!>
-
-<form>
 <div align = "center" style = "margin-top : 50px">
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LOGIN</h1>
-아이디<br>
-<input type="text" size=10 maxlength=20 name="userid"><br>
-<div style = "margin-top : 10px">
-비밀번호<br>
-<input type="text"size=10 maxlength=20 name="userpwd"><br>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%=form_for :login, url: login_index_path do |f| %>
+			<%= f.label :아이디 %>
+			<%= f.text_field :userid,class: 'form-control' %>
+			<br><%= f.label :비밀번호 %>
+	      <%= f.text_field :pwd, class: 'form-control' %>
+	      <br><%= f.submit "Log in", class: "btn btn-primary" %>
+		<% end %>
+		
+		<p>New user? <%=link_to "Sign up now",join_index_path %></p>
+	</div>
 </div>
-<div style = "margin-top : 15px">
-<input type="submit" value="log in">
-<input type="button" value="join in"><!-- onclick="window.open('g1.html', 'i-right');">--!>
-
 </div>
-</div>
-</form>
-
 <p>Find me in app/views/login/index.html.erb</p>
 
