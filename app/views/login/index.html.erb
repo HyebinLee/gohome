@@ -3,16 +3,19 @@
 --!>
 <div align = "center" style = "margin-top : 50px">
 <div class="row">
+	<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LOGIN</h1>
 	<div class="col-md-6 col-md-offset-3">
 		<%=form_for :login, url: login_index_path do |f| %>
-			<%= f.label :아이디 %>
+			<%= f.label :아이디 %><br>
 			<%= f.text_field :userid,class: 'form-control' %>
-			<br><%= f.label :비밀번호 %>
+			<br><div style = "margin-top : 10px"><%= f.label :비밀번호 %></div>
 	      <%= f.text_field :pwd, class: 'form-control' %>
-	      <br><%= f.submit "Log in", class: "btn btn-primary" %>
+
+	      <br><div style = "margin-top : 10px"><%= f.submit "Log in" %></div>
 		<% end %>
-		
+		<div style = "margin-top : 15px">
 		<p>New user? <%=link_to "Sign up now",join_index_path %></p>
+		</div>
 	</div>
 </div>
 </div>
