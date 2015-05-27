@@ -1,3 +1,10 @@
 <%=render './form' %>
-<h1>MyPage Page</h1>
-<p>Find me in app/views/mypage/index.html.erb</p>
+<br><br><p style="text-align:center">로그인 후 이용 가능합니다.</p>
+<table align=center>
+  <tr>
+    <td style="width:80px"><%=link_to '홈으로', root_path %></td>
+    <td style="width:80px"><%=link_to '로그인',login_index_path %></td>
+  </tr>
+</table>
+<p style="text-align:center">아이디가 없는 경우는 회원가입 후 이용 바랍니다.</p>
+<div style="text-align:center;text-color:red"><%=link_to '가입하기', join_index_path %></div>

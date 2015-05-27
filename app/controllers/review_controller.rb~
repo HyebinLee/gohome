@@ -9,11 +9,11 @@ class ReviewController < ApplicationController
     @review = Review.new
   end
   def edit
-    @review=Review.find(params[:id])
+    @article=Review.find(params[:id])
   end
   def create
     @review=Review.new(review_params)
-    @review.date = Time.now.strftime("%Y-%m-%d") 
+  
     if @review.save
       redirect_to @review
     else
