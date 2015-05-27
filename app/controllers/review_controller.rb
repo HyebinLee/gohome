@@ -13,7 +13,7 @@ class ReviewController < ApplicationController
   end
   def create
     @review=Review.new(review_params)
-  
+    @review.date = Time.now.strftime("%Y-%m-%d") 
     if @review.save
       redirect_to @review
     else

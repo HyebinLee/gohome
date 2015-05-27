@@ -6,7 +6,7 @@
     <td><%= f.label :num %></td>
     <td><%= f.text_field :num, :style => "width:100%;border:0" %></td>
     <td><%= f.label :date %></td>
-    <td><%= f.text_field :date, :style => "width:100%;border:0" %></td>
+    <td><%= Time.now.strftime("%Y-%m-%d") %></td>
   </tr>
  
   <tr>
@@ -31,7 +31,7 @@
     <td><%= f.label :name %></td>
     <td><%= f.text_field :name, :style => "width:100%;border:0" %></td>
     <td><%= f.label :star %></td>
-    <td><%= f.text_field :star, :style => "width:100%;border:0" %></td>
+    <td><%= f.select :star, options_for_select(Review::STARS) %></td>
   </tr>
 <table>
 
