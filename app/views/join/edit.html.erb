@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<script>
+ $(function() {
+		   $("#datepicker1").datepicker({
+				    changeMonth: true,
+					     
+					     changeYear: true,
+						      dateFormat: 'yy-mm-dd',
+								    maxDate: '-0d',
+									     monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10>월','11월','12월'],
+										      dayNamesMin: ['일','월','화','수','목','금','토'],
+												    yearRange: 'c-99:c+0',
+													     showMonthAfterYear: true,
+														    });
+			});
+</script>
+
+<%=render './form' %>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center; margin-top : 50px">JOIN</h1>
+<%=form_for :join, url:join_index_path,method: :patch do |f| %>
+
+<table align=center>
+  <tr>
+      <td><%=f.label :이름 %></td>
+		    <td ColSpan="2"><%= f.text_field :name, :style => "width:100%" %></td>
+			   </tr>
+				  <tr>
+				      <td><%=f.label :아이디 %></td>
+						    <td><%= f.text_field :userid, :style => "width:95%" %></td>
+							     <td><%= link_to '중복확인',new_join_path,:style=>"width :600; height :500" %></td>
+								     </tr>
+									    <tr>
+										     <td><%=f.label :생년월일 %></td>
+											      <td ColSpan="2"><%= f.text_field :birth, :style => "width:100%", :id => "datepicker1"%></td>
+													    </td>
+														 </tr>
+														   <tr>
+															    <td><%=f.label :비밀번호 %></td>
+																     <td ColSpan="2"><%= f.text_field :pwd, :style => "width:100%" %></td>
+																	    </tr>
+																		   <tr>
+																			    <td>비밀번호 확인</td>
+																				     <td ColSpan="2"><input type="text" maxlength=20 name="userpwd2" style="width:100%;"></td>
+																					    </tr>
+																						   <tr>
+																							    <td><%=f.label :주소 %></td>
+																								     <td ColSpan="2"><%=f.text_field :address, :style=>"width:100%" %></td>
+																									    </tr>
+																										   <tr>
+																											    <td ColSpan="3"><div style = "margin-top : 20px;text-align :center">
+																												         <input type="checkbox" name="agree">이용약관에 동의합니다.</div></td>
+																															  </tr>
+																															  <tr>
+																															      <td ColSpan="3"><div style = "margin-top : 10px;text-align :center">
+																																	        <input type="checkbox" name="agree2">개인정보 취급방침에 동의합니다.</div></td>
+																																			    </tr>
+																																				   <tr>
+																																					     <td ColSpan="3"><div style="margin-top : 10px;text-align:center">
+																																						           <%= f.submit '가입하기'%></td></div>
+																																									    </tr>
+																																										 </table>
+																																										 <% end %>
+

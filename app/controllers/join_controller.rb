@@ -18,7 +18,9 @@ class JoinController < ApplicationController
 	   render 'show'
 	 end
   end
-
+	def edit
+		@join = Join.find(params[:id])
+	end
   private
    def join_params
 	  params.require(:join).permit(:name, :userid, :birth, :pwd,:address)
