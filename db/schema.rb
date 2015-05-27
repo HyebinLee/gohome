@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150525140640) do
-=======
 ActiveRecord::Schema.define(version: 20150525185109) do
->>>>>>> fa43edd2cbbaa62f4f9671dd91d5d61947944b34
 
   create_table "joins", force: :cascade do |t|
     t.text     "name"
