@@ -2,6 +2,7 @@ class ShopController < ApplicationController
   def index
     @shop = Shop.all
   end
+
   def show
     @shop = Shop.find(params[:id])
   end

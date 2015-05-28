@@ -2,6 +2,7 @@ class LoginController < ApplicationController
   def index
     @join=Join.all
   end
+
   def show
     @join = Join.find(params[:id])
   end
@@ -33,13 +34,6 @@ class LoginController < ApplicationController
   #  end
   #end
 
-  def account
-    if session[:user_id] !=nil
-      @sessName=Join.find(session[:user_id].id)
-    else
-      @sessName="Guest"
-    end
-  end
   #def Join.authenticate(userid,pwd)
   #  join = find_by_userid(userid)
   #  if join.nil?

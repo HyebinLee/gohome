@@ -2,6 +2,7 @@ class ReviewController < ApplicationController
   def index
     @review = Review.all
   end
+
   def show
     @review = Review.find(params[:id])
   end

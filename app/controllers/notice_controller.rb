@@ -3,6 +3,7 @@ class NoticeController < ApplicationController
   def index
     @notice = Notice.all
   end
+
   def show
     @notice = Notice.find(params[:id])
   end

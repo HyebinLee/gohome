@@ -1,10 +1,27 @@
 <%=render './form' %>
-<br><br><p style="text-align:center">로그인 후 이용 가능합니다.</p>
-<table align=center>
-  <tr>
-    <td style="width:80px"><%=link_to '홈으로', root_path %></td>
-    <td style="width:80px"><%=link_to '로그인',login_index_path %></td>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">MYPAGE</h1>
+
+<% if @sessNum==2 %>
+<p>New user? <%=link_to "Sign up now",join_index_path %></p>
+<p>user? <%=link_to "login",login_index_path %></p>
+
+<% elsif @sessNum==0 %>
+<table width=100% align=center rules="rows" style="rule-color:grey">
+  <tr style="border-bottom: 2px solid black">
+    <td>NAME</td>
+    <td>ID</td>
   </tr>
+
+  <% @join.each do |join| %>
+    <tr>
+      <td><%= join.name %></td>
+      <td><%= link_to join.userid, join_path(join) %></td>
+    </tr>
+  <% end %>
 </table>
-<p style="text-align:center">아이디가 없는 경우는 회원가입 후 이용 바랍니다.</p>
-<div style="text-align:center;text-color:red"><%=link_to '가입하기', join_index_path %></div>
+<% else %>
+<p>Your name is <%=@sessName%></p>
+
+<%end%>
+
+

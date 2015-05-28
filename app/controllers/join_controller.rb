@@ -3,6 +3,7 @@ class JoinController < ApplicationController
   def index
    @join = Join.new
   end
+
   def show
 	@join = Join.find(params[:id])
   end
