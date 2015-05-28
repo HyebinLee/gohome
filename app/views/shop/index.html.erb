@@ -1,3 +1,18 @@
 <%=render './form' %>
-<h1>Shop Page</h1>
-<p>Find me in app/views/shop/index.html.erb</p>
+
+<p style="text-align:right"><%=link_to '글쓰기', new_shop_path %></p>
+<table width=100% align=center rules="rows" style="rule-color:grey">
+  <tr style="border-bottom: 2px solid black">
+    <td>PICTURE</td>
+    <td>PRODUCT</td>
+    <td>PRICE</td>
+  </tr>
+
+  <% @shop.each do |shop| %>
+    <tr>
+      <td><%=shop.fimage %></td>
+      <td><%= link_to shop.product, shop_path(shop) %></td>
+      <td><%= shop.price %></td>
+    </tr>
+  <% end %>
+</table>

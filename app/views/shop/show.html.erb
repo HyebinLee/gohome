@@ -1,0 +1,18 @@
+<%=render './form' %>
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
+
+<table rules="rows" width="100%"  style="border:grey;text-align:left">
+  <tr>
+    <td>PRODUCT</td>
+    <td style="color:grey"><%=@shop.product%></td>
+    <td>PRICE</td>
+    <td style="color:grey"><%=@shop.price%></td>
+  </tr>
+  <tr>
+    <td>TEXT</td>
+    <th style="color:grey; font-weight:lighter"><%=@shop.text%></th>
+  </tr>
+</table>
+
+<br><p style="text-align:center"><%=link_to '목록', shop_index_path%></p>
+

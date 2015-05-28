@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :login 
   # You can have the root of your site routed with "root"
    root 'first#index'
-
+  get '/join/check', :controller => 'join', :action => 'check'
+  get '/login/login', :controller => 'login', :action => 'login'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

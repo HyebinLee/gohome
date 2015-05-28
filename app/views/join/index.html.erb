@@ -20,7 +20,7 @@
 
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center; margin-top : 50px">JOIN</h1>
-<%=form_for :join, url: join_index_path do |f| %>
+<%=form_for :join, url:join_index_path do |f| %>
 
 <table align=center>
   <tr>
@@ -30,8 +30,9 @@
   <tr>
     <td><%=f.label :아이디 %></td>
     <td><%= f.text_field :userid, :style => "width:95%" %></td>
-    <td><%= link_to '중복확인',new_join_path,:style=>"width :600; height :500" %></td>
-   </tr>
+    <td><%= button_tag '중복확인',  :data => { :remote => true, :url => url_for(:controller => "join",  :action => "check" ),  :with => "'userid=' + $(userid).value"}, :popup=>['aa','height=600, width=600']  %>
+</td>
+  </tr>
   <tr>
     <td><%=f.label :생년월일 %></td>
     <td ColSpan="2"><%= f.text_field :birth, :style => "width:100%", :id => "datepicker1"%></td>

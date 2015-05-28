@@ -1,4 +1,6 @@
 class MypageController < ApplicationController
-  def new
+
+  def index
   end
+  
 end
