@@ -9,6 +9,7 @@
 </ul>  
 </div>
 <% else %>
+  <table rules="rows" width="100%"  style="border:grey;text-align:left">
   <tr>
     <td>이름</td>
     <th style="color:grey;font-weight:lighter">
@@ -32,4 +33,4 @@
 </table>
 <% end %>
 
-<br><div style="text-align:center"><%=link_to '다시 가입',join_index_path %><div style = "margin-right : 10px"><%= link_to '홈으로', root_path %></div>
+<br><div style="text-align:center"><%=link_to '로그인 화면 이동',login_index_path %><div style = "margin-right : 10px"><%= link_to '홈으로', root_path %></div>
