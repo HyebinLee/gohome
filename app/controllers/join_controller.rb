@@ -1,5 +1,4 @@
 class JoinController < ApplicationController
-
   def index
    @join = Join.new
   end

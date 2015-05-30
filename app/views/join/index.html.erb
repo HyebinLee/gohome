@@ -30,7 +30,7 @@
   <tr>
     <td><%=f.label :아이디 %></td>
     <td><%= f.text_field :userid, :style => "width:95%" %></td>
-    <td><%= button_tag '중복확인',  :data => { :remote => true, :url => url_for(:controller => "join",  :action => "check" ),  :with => "'userid=' + $(userid).value"}, :popup=>['aa','height=600, width=600']  %>
+    <td><%= button_tag '중복확인',  :data => { :remote => true, :url => url_for(:controller => "join",  :action => "check" ),  :with => "'userid=' + $(userid).value"}  %>
 </td>
   </tr>
   <tr>
