@@ -1,3 +1,32 @@
+<SCRIPT TYPE="TEXT/JAVASCRIPT"> 
+ function Increment() { 
+    var count = document.getElementsByName("ps_num")[0]; 
+    var arg = arguments[0]; 
+    switch(arg){ 
+      case 1: 
+              ++count.value; 
+              break; 
+      case -1: 
+              --count.value; 
+              break; 
+      default: 
+                break; 
+    } 
+    money.innerHTML = (cost * count.value); 
+  } 
+ window.onload = function(){ 
+  Increment(); 
+  } 
+</SCRIPT> 
+
+<script> 
+function layer_popup(){ 
+var layer = document.getElementById("popup_layer"); 
+layer.style.visibility="visible";
+} 
+</script> 
+
+
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
 
@@ -12,7 +41,7 @@
 
 <table rules="rows" width="100%"  style="border:grey;text-align:left">
   <tr>
-    <td style="color:grey" RowSpan=4 width=100><%= image_tag(@shop.image_url, :width => "90%", :height => 200) if @shop.image.present? %></td>
+    <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "90%", :height => 200) if @shop.image.present? %></td>
   </tr>
   <tr>
     <td>PRODUCT</td>
@@ -22,14 +51,68 @@
     <td>PRICE</td>
     <td style="color:grey"><%=@shop.price%></td>
   </tr>
-  <tr style="text-align:center">
-    <td width=20><%=link_to 'CART', cart_index_path%></td>
-    <td width=20><%=link_to 'PAY', mypage_index_path%></td>
+  <%if current_user==1 %>
+  <tr>
+    <td>NUM</td>
+    <td width="20px"><input type="button" value="-" onclick='Increment(-1);'> </td>
+    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();"></td>
+     <td><input type="button" value="+" onclick='Increment(1);'> </td>
   </tr>
+  <tr width="100%" style="text-align:center">
+    <td><input type="button" value="CART" style="backgroud:white"  onclick="layer_popup()"></td>
+    <td style="width:30"><%=link_to 'PAY', mypage_index_path%></td>
+  </tr>
+  <% else %>
+    <tr></tr><tr></tr>
+  <% end %>
   <tr>
     <td style="color:grey"><%=@shop.text%></td>
   </tr>
+  <tr><td><br>REVIEW</td></tr>
+<tr><td ColSpan=6><p style="text-align:right"><%=link_to '글쓰기', new_review_path %></p></td></tr>
+  <tr style="border-bottom: 2px solid black">
+    <td>NO</td>
+    <td>PRODUCT</td>
+    <td>SUBJECT</td>
+    <td>NAME</td>
+    <td>DATE</td>
+    <td>평점</td>
+  </tr>
+
+  <% @review.each do |review| %>
+    <tr>
+      <td><%= review.num %></td>
+      <td><%= review.product %></td>
+      <td><%= link_to review.subject, review_path(review) %></td>
+      <td><%= review.name %></td>
+      <td><%= review.date %></td>
+      <td><%= review.star %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br><p style="text-align:center"><%=link_to '목록', shop_index_path%></p>
+
+<div id="popup_layer" 
+style="position:absolute;
+border:double;
+top:300px;
+left:300px;
+width:250px;
+height:100px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+"> 
+<table>
+  <tr><td>장바구니에 담겼습니다.</td></tr>
+  <tr><td>장바구니로 이동하시겠습니까?</td></tr>
+  <tr style="text-align:center">
+    <td><div style="width:50;display:inline"><%=link_to 'YES', cart_index_path%></div>
+    <div style="width:50;display:inline"><%=link_to 'NO', shop_index_path%></div></td>
+  </tr>
+</table>
+
+</div> 
+
 

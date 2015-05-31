@@ -5,6 +5,8 @@ class ShopController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    session[:review]=@shop.id
+    @review = Review.all
   end
   def edit
     @shop=Shop.find(params[:id])
@@ -37,7 +39,8 @@ class ShopController < ApplicationController
     redirect_to shop_index_path
   end
 
-
+  def message
+  end
   private
     def shop_params
       params.require(:shop).permit(:image, :product, :price, :text)

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
   helper_method :username
+  helper_method :reviewproduct
   def current_user
     if session[:user_id] == nil || session[:user_id]== -1
       @sessNum=2;
@@ -19,5 +20,8 @@ class ApplicationController < ActionController::Base
  
   def username
     @sessName=Join.find(session[:user_id]).name
+  end
+  def reviewproduct
+    @revName=Shop.find(session[:review]).product
   end
 end
