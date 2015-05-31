@@ -20,7 +20,8 @@ class JoinController < ApplicationController
       end
     else
       if @join.save
-        redirect_to @join
+			flash[:alert]="가입 성공~"
+			redirect_to @join
       else
         render 'index'
       end
