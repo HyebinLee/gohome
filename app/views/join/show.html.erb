@@ -9,7 +9,10 @@
 </ul>  
 </div>
 <% else %>
-  <tr>
+<div>
+	<h4><%=flash[:alert] %></h4>
+</div>
+<!--  <tr>
     <td>이름</td>
     <th style="color:grey;font-weight:lighter">
       <%=@join.name%></th>
@@ -29,7 +32,7 @@
       <%=@join.address %>
     </th>
   </tr>
-</table>
+</table>--!>
 <% end %>
 
 <br><div style="text-align:center"><%=link_to '다시 가입',join_index_path %><div style = "margin-right : 10px"><%= link_to '홈으로', root_path %></div>
