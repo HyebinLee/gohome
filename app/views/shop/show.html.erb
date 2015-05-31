@@ -26,6 +26,13 @@ layer.style.visibility="visible";
 } 
 </script> 
 
+<script> 
+function hidpopup(){ 
+var layer = document.getElementById("popup_layer"); 
+layer.style.visibility="hidden";
+} 
+</script>
+
 
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
@@ -109,7 +116,7 @@ background-color:white;
   <tr><td>장바구니로 이동하시겠습니까?</td></tr>
   <tr style="text-align:center">
     <td><div style="width:50;display:inline"><%=link_to 'YES', cart_index_path%></div>
-    <div style="width:50;display:inline"><%=link_to 'NO', shop_index_path%></div></td>
+    <div style="width:50;display:inline"><td><%= link_to 'NO', shop_index_path%></td>
   </tr>
 </table>
 

@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :username
   helper_method :reviewproduct
+  helper_method :shoptype
+
   def current_user
     if session[:user_id] == nil || session[:user_id]== -1
       @sessNum=2;
@@ -24,4 +26,8 @@ class ApplicationController < ActionController::Base
   def reviewproduct
     @revName=Shop.find(session[:review]).product
   end
+  def shoptype
+    @stype;
+  end
+
 end

@@ -5,6 +5,7 @@
   <tr>
     <td><%=f.label :image %></td>
     <td><%=f.file_field :image %> </td>
+  </tr>
   <tr>
     <td><%= f.label :product %></td>
     <th ColSpan="3">
@@ -20,7 +21,6 @@
   <tr>
     <td RowSpan="2"><%= f.label :text %></td>
     <td>
-      <%= f.file_field :text %> </div>
       <%= f.text_area :text, :style => "width:100%;border:0" %>
     </td>
   </tr>

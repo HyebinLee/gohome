@@ -16,6 +16,7 @@ class ShopController < ApplicationController
   end
    def create
     @shop=Shop.new(shop_params)
+    @shop.type=shoptype
     if @shop.save
         redirect_to @shop
     else
@@ -43,7 +44,6 @@ class ShopController < ApplicationController
   end
   private
     def shop_params
-      params.require(:shop).permit(:image, :product, :price, :text)
+      params.require(:shop).permit(:image, :type, :product, :price, :text)
     end
-
 end

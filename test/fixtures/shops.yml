@@ -2,12 +2,14 @@
 
 one:
   image: MyText
+  type: MyText
   product: MyText
   price: MyText
   text: MyText
 
 two:
   image: MyText
+  type: MyText
   product: MyText
   price: MyText
   text: MyText
