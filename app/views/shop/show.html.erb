@@ -12,17 +12,21 @@
 
 <table rules="rows" width="100%"  style="border:grey;text-align:left">
   <tr>
-    <td>IMAGE</td>
-    <td style="color:grey"><%= image_tag(@shop.image_url, :width => 50, :height => 50) if @shop.image.present? %></td>
+    <td style="color:grey" RowSpan=4 width=100><%= image_tag(@shop.image_url, :width => "90%", :height => 200) if @shop.image.present? %></td>
   </tr>
   <tr>
     <td>PRODUCT</td>
     <td style="color:grey"><%=@shop.product%></td>
+  </tr>
+  <tr>
     <td>PRICE</td>
     <td style="color:grey"><%=@shop.price%></td>
   </tr>
+  <tr style="text-align:center">
+    <td width=20><%=link_to 'CART', cart_index_path%></td>
+    <td width=20><%=link_to 'PAY', mypage_index_path%></td>
+  </tr>
   <tr>
-    <td>TEXT</td>
     <td style="color:grey"><%=@shop.text%></td>
   </tr>
 </table>
