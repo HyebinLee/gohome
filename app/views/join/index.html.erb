@@ -10,7 +10,7 @@
     changeYear: true,
     dateFormat: 'yy-mm-dd',
     maxDate: '-0d',
-    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10>월','11월','12월'],
+    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
     dayNamesMin: ['일','월','화','수','목','금','토'],
     yearRange: 'c-99:c+0',
     showMonthAfterYear: true,
@@ -30,7 +30,7 @@
   <tr>
     <td><%=f.label :아이디 %></td>
     <td><%= f.text_field :userid, :style => "width:95%" %></td>
-    <td><%= button_tag '중복확인',  :data => { :remote => true, :url => url_for(:controller => "join",  :action => "check" ),  :with => "'userid=' + $(userid).value"}, :popup=>['aa','height=600, width=600']  %>
+    <td><%= button_tag '중복확인',  :data => {:remote => true, :url => url_for(:controller => "join",  :action => "check" ), :with => "'userid=' + $(userid).value"}  %>
 </td>
   </tr>
   <tr>

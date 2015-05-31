@@ -9,10 +9,15 @@
 </ul>  
 </div>
 <% else %>
+<<<<<<< HEAD
 <div>
 	<h4><%=flash[:alert] %></h4>
 </div>
 <!--  <tr>
+=======
+  <table rules="rows" width="100%"  style="border:grey;text-align:left">
+  <tr>
+>>>>>>> 5adb9b3a45505091aa6e691bf790bc876ec68318
     <td>이름</td>
     <th style="color:grey;font-weight:lighter">
       <%=@join.name%></th>
@@ -35,4 +40,4 @@
 </table>--!>
 <% end %>
 
-<br><div style="text-align:center"><%=link_to '다시 가입',join_index_path %><div style = "margin-right : 10px"><%= link_to '홈으로', root_path %></div>
+<br><div style="text-align:center"><%=link_to '로그인 화면 이동',login_index_path %><div style = "margin-right : 10px"><%= link_to '홈으로', root_path %></div>

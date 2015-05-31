@@ -1,11 +1,11 @@
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">MYPAGE</h1>
 
-<% if @sessNum==2 %>
+<% if current_user==2 %>
 <p>New user? <%=link_to "Sign up now",join_index_path %></p>
 <p>user? <%=link_to "login",login_index_path %></p>
 
-<% elsif @sessNum==0 %>
+<% elsif current_user==0 %>
 <table width=100% align=center rules="rows" style="rule-color:grey">
   <tr style="border-bottom: 2px solid black">
     <td>NAME</td>
@@ -21,6 +21,7 @@
 </table>
 <% else %>
 <p>Your name is <%=username%></p>
+<<<<<<< HEAD
 <br><p>구매 물품</p>
 <table width=100% align=center rules="rows" style="rule-color:grey">
   <tr style="border-bottom: 2px solid black">
@@ -29,6 +30,8 @@
   <td>PRICE</td>
   </tr>
 </table>
+=======
+>>>>>>> 5adb9b3a45505091aa6e691bf790bc876ec68318
 
 <%end%>
 

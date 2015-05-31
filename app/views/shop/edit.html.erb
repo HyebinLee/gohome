@@ -1,6 +1,6 @@
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
-<%= form_for @shop, url: shop_index_path, :html => {:multipart => true} do |f| %>
+<%= form_for @shop, url: shop_path, :html => {:multipart => true}, method: :patch  do |f| %>
 <table width="100%" border="1">
   <tr>
     <td><%=f.label :image %></td>
@@ -28,7 +28,7 @@
 
 <table align="center">
   <tr style="text-align:center">
-    <td width=40><%=link_to '이전', shop_index_path %></td>
+    <td width=40><%=link_to '이전', shop_path %></td>
     <td width=40><%= f.submit '등록'%></td>
   </tr>
 </table>

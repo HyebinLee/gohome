@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150531091344) do
+=======
+ActiveRecord::Schema.define(version: 20150529163429) do
+>>>>>>> 5adb9b3a45505091aa6e691bf790bc876ec68318
 
   create_table "joins", force: :cascade do |t|
     t.text     "name"
@@ -54,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150531091344) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "userid"
@@ -64,4 +69,6 @@ ActiveRecord::Schema.define(version: 20150531091344) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 5adb9b3a45505091aa6e691bf790bc876ec68318
 end

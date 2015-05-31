@@ -1,16 +1,33 @@
 <%=render './form' %>
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
 
+<% if current_user==0 %>
+<table align="right">
+  <tr style="text-align:right">
+    <td width=40><%=link_to '수정', edit_shop_path(@shop) %></td>
+    <td width=40><%=link_to '삭제', shop_path(@shop), method: :delete %></td>
+  </tr>
+</table>
+<% end %>
+
 <table rules="rows" width="100%"  style="border:grey;text-align:left">
+  <tr>
+    <td style="color:grey" RowSpan=4 width=100><%= image_tag(@shop.image_url, :width => "90%", :height => 200) if @shop.image.present? %></td>
+  </tr>
   <tr>
     <td>PRODUCT</td>
     <td style="color:grey"><%=@shop.product%></td>
+  </tr>
+  <tr>
     <td>PRICE</td>
     <td style="color:grey"><%=@shop.price%></td>
   </tr>
+  <tr style="text-align:center">
+    <td width=20><%=link_to 'CART', cart_index_path%></td>
+    <td width=20><%=link_to 'PAY', mypage_index_path%></td>
+  </tr>
   <tr>
-    <td>TEXT</td>
-    <th style="color:grey; font-weight:lighter"><%=@shop.text%></th>
+    <td style="color:grey"><%=@shop.text%></td>
   </tr>
 </table>
 

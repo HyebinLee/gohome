@@ -1,6 +1,10 @@
 <%=render './form' %>
 
+<% if current_user==0 %>
 <p style="text-align:right"><%=link_to '글쓰기', new_shop_path %></p>
+<%else%> <p></p> 
+<% end %>
+
 <table width=100% align=center rules="rows" style="rule-color:grey">
   <tr style="border-bottom: 2px solid black">
     <td>PICTURE</td>
@@ -10,7 +14,7 @@
 
   <% @shop.each do |shop| %>
     <tr>
-      <td><%=shop.fimage %></td>
+      <td><%= image_tag(shop.image_url, :width => 50, :height => 50) if shop.image.present? %></td>
       <td><%= link_to shop.product, shop_path(shop) %></td>
       <td><%= shop.price %></td>
     </tr>

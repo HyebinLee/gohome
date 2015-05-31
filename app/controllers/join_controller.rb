@@ -1,5 +1,4 @@
 class JoinController < ApplicationController
-
   def index
    @join = Join.new
   end
@@ -13,7 +12,7 @@ class JoinController < ApplicationController
   def create
     @join=Join.new(join_params)
     if @join.address==''
-      @admin=Join.find_by_userid(@join.userid)
+      @admin=Join.find_by_userid( @join.userid)
       if !@admin
         render 'check'
        else

@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
   helper_method :username
-
   def current_user
     if session[:user_id] == nil || session[:user_id]== -1
       @sessNum=2;
