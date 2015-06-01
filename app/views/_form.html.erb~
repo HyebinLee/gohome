@@ -5,9 +5,9 @@ a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
 <script>
 $(function(){
     $("#shop").change(function(){
-        shoptype=$("#shop option:selected").text()
+        @shoptype=$("#shop option:selected").text()
         //alert("클릭입니다!!");
-        alert(shoptype);
+        alert(@shoptype);
         window.location=$(this).val();
     });
 
