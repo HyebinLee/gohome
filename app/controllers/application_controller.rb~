@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :itemimage
   helper_method :itemproduct
   helper_method :itemprice
+  helper_method :itemtext
 
   helper_method :current_user
   helper_method :username
@@ -20,6 +21,9 @@ class ApplicationController < ActionController::Base
   end
   def itemprice
     @sessPrice=Shop.find(session[:item]).price
+  end
+  def itemtext
+    @sessText=Shop.find(session[:item]).text
   end
 
   def current_user

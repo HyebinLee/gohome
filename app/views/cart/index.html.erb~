@@ -1,13 +1,30 @@
 <%=render './form' %>
 <h1>Cart Page</h1>
 <br><p>장바구니 목록</p>
+
+<% if @cart.empty? %>
+	<br><p>담긴 상품이 없습니다.</p>
+<% else %>
 <br><table width=100% align=center rules="rows" style="rule-color:grey">
  <tr style="border-bottom: 2px solid black">
   <td>PICTURE</td>
   <td>PRODUCT</td>
   <td>PRICE</td>
+  <td>수량</td>
+  <td></td>
  </tr>
 </table>
-<br><%=shop.image%><%=shop.product%><%=shop.price%>
 
-<p>Find me in app/views/cart/index.html.erb</p>
+<br><table width=100% align=center rules="rows" style="rule-color:black">
+<% @cart.each do |cart| %>
+<tr style="border-bottom: 2px solid black">
+  <td>PICTURE</td>
+  <td><%= image_tag(cart.image, :width => 50, :height => 50)%></td>
+  <td><%=cart.product%></td>
+  <td><%=cart.price%></td>
+  <td><%=cart.num%></td>
+  <td><%=link_to 'x', cart_path(cart), method: :delete %></td>
+ </tr><% end %>
+</table>
+<% end %>
+

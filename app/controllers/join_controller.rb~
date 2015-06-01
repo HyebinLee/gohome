@@ -26,6 +26,12 @@ class JoinController < ApplicationController
         render 'index'
       end
    end
+    #if @join.save
+      #redirect_to @join
+    #else
+      #render 'check'
+    #end
+    #render 'show'
     
   end
   def edit
