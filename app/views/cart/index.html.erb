@@ -17,13 +17,14 @@
 
 <br><table width=100% align=center rules="rows" style="rule-color:black">
 <% @cart.each do |cart| %>
+  <% if cart.user==username %>
 <tr style="border-bottom: 2px solid black">
   <td><%= image_tag(cart.image, :width => 50, :height => 50)%></td>
   <td><%=cart.product%></td>
   <td><%=cart.price%></td>
   <td><%=cart.num%></td>
   <td><%=link_to 'x', cart_path(cart), method: :delete %></td>
- </tr><% end %>
+ </tr><% end %><% end %>
 </table>
 <% end %>
 

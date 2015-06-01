@@ -4,17 +4,20 @@ class ShopController < ApplicationController
   end
 
   def show
+    @count=0
     @shop = Shop.find(params[:id])
     session[:item]=@shop.id
     session[:review]=@shop.id
     @review = Review.all
-
-    @cart=Cart.new
-    @cart.image=itemimage
-    @cart.product=itemproduct
-    @cart.price=itemprice
-    @cart.num=1
-    @cart.save  
+    if @count==1
+      @cart=Cart.new
+      @cart.image=itemimage
+      @cart.product=itemproduct
+      @cart.price=itemprice
+      @cart.user=username
+      @cart.num=1
+      @cart.save  
+    end
   end
   def edit
     @shop=Shop.find(params[:id])
@@ -61,6 +64,6 @@ class ShopController < ApplicationController
 
 private
    def cart_params
-	  params.require(:cart).permit(:image, :product, :price, :num)
+	  params.require(:cart).permit(:image, :product, :price, :num, :user)
    end
 end

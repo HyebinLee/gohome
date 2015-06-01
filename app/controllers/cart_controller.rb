@@ -22,6 +22,6 @@ class CartController < ApplicationController
   end
   private
    def cart_params
-	  params.require(:cart).permit(:image, :product, :price, :num)
+	  params.require(:cart).permit(:image, :product, :price, :num, :user)
    end
 end

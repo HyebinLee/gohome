@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyText
+  product: MyText
+  price: MyText
+  num: 1
+  user: MyText
+
+two:
+  image: MyText
+  product: MyText
+  price: MyText
+  num: 1
+  user: MyText
