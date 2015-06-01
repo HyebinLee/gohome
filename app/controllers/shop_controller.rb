@@ -5,6 +5,7 @@ class ShopController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    session[:item]=@shop.id
     session[:review]=@shop.id
     @review = Review.all
   end

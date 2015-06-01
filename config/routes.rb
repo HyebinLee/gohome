@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #get 'item/index'
+
   #get 'first/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
