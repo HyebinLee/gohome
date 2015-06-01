@@ -62,11 +62,12 @@ layer.style.visibility="hidden";
   <tr>
     <td>NUM</td>
     <td width="20px"><input type="button" value="-" onclick='Increment(-1);'> </td>
-    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();"></td>
+    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();">
      <td><input type="button" value="+" onclick='Increment(1);'> </td>
   </tr>
-  <tr width="100%" style="text-align:center"> 
-<td><input type="button" value="CART" style="backgroud:white"  onclick="layer_popup()"></td>
+  </tr>
+  <tr width="100%" style="text-align:center">
+  <td><%= button_tag 'CART',  :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}  %></td> 
     <td style="width:30"><%=link_to 'PAY', pay_path%></td>
   </tr>
   <% else %>
@@ -112,7 +113,6 @@ visibility:hidden;
 background-color:white;
 "> 
 <table>
-  <% @count=1 %>
   <tr><td>장바구니에 담겼습니다.</td></tr>
   <tr><td>장바구니로 이동하시겠습니까?</td></tr>
   <tr style="text-align:center">

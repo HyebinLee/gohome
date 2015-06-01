@@ -1,10 +1,10 @@
 <%=render './form' %>
-<p><%=@shoptype%>
+
+<p><%=shoptype%><p>
 <% if current_user==0 %>
 <p style="text-align:right"><%=link_to '글쓰기', new_shop_path %></p>
 <%else%> <p></p> 
 <% end %>
-
 <hr>
 <table>
   <tr>

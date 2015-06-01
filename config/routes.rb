@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/logout', :controller => 'first', :action => 'logout'
   get '/message', :controller => 'shop', :action => 'message'
   get '/pay', :controller => 'shop', :action => 'pay'
+  get '/inside', :controller => 'shop', :action => 'inside'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

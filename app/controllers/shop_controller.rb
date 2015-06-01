@@ -1,23 +1,14 @@
 class ShopController < ApplicationController
+  $var=0
   def index
     @shop = Shop.all
   end
 
   def show
-    @count=0
     @shop = Shop.find(params[:id])
     session[:item]=@shop.id
     session[:review]=@shop.id
-    @review = Review.all
-    if @count==1
-      @cart=Cart.new
-      @cart.image=itemimage
-      @cart.product=itemproduct
-      @cart.price=itemprice
-      @cart.user=username
-      @cart.num=1
-      @cart.save  
-    end
+    @review=Review.all
   end
   def edit
     @shop=Shop.find(params[:id])
@@ -56,6 +47,19 @@ class ShopController < ApplicationController
  
   def pay
     @join=Join.all
+  end
+  def inside
+    $var=3
+    @cart=Cart.new
+    @cart.image=itemimage
+    @cart.product=itemproduct
+    @cart.price=itemprice
+    @cart.user=username
+    @cart.num=$var
+    @cart.save
+    render :update do |page|
+      page.replace_html 'cart', :partial => cart_index_path
+    end
   end
   private
     def shop_params
