@@ -22,7 +22,9 @@ class LoginController < ApplicationController
       #join=Join.authenticate(params[:userid], params[:pwd])
     end
   end
-  
+ 
+  def find
+  end 
   #def login
   #  join=Join.authenticate(params[:userid], params[:pwd])
   #  if join

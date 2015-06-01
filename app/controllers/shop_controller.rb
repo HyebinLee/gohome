@@ -55,7 +55,6 @@ class ShopController < ApplicationController
     @buy.num=1
     @buy.save
   end
-<<<<<<< HEAD
   def inside
     $var=3
     @cart=Cart.new
@@ -65,16 +64,16 @@ class ShopController < ApplicationController
     @cart.user=username
     @cart.num=$var
     @cart.save
-    render :update do |page|
-      page.replace_html 'cart', :partial => cart_index_path
-    end
+  # render :update do |page|
+  #    page.replace_html 'cart', :partial => cart_index_path
+ #   end
+    flash[:alert]="장바구니에 담겼습니다."
+  #   render 'cart_index_path'
   end
-=======
   def buy
     @shop=Shop.all
   end
 
->>>>>>> 4137e5f507cc1e83e3f610067679d7a8e697e03f
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)

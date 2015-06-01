@@ -67,7 +67,7 @@ layer.style.visibility="hidden";
   </tr>
   </tr>
   <tr width="100%" style="text-align:center">
-  <td><%= button_tag 'CART',  :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}  %></td> 
+  <td><%= button_tag 'CART',  :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")} %></td> 
     <td style="width:30"><%=link_to 'PAY', pay_path%></td>
   </tr>
   <% else %>
