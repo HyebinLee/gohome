@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601130309) do
+ActiveRecord::Schema.define(version: 20150601172918) do
 
   create_table "buys", force: :cascade do |t|
     t.text     "image"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150601130309) do
   create_table "joins", force: :cascade do |t|
     t.text     "name"
     t.text     "userid"
+    t.text     "email"
     t.text     "birth"
     t.text     "pwd"
     t.text     "address"

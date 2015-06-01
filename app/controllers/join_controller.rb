@@ -31,7 +31,9 @@ class JoinController < ApplicationController
   def edit
     @join = Join.find(params[:id])
   end
-
+  def find
+    @join=Join.find(params[:id])
+  end
   def check
     @admin = Join.find_by_userid(@join.userid)
     render :update do |page|
@@ -41,7 +43,7 @@ class JoinController < ApplicationController
 
   private
    def join_params
-	  params.require(:join).permit(:name, :userid, :birth, :pwd,:address)
+	  params.require(:join).permit(:name, :userid, :email, :birth, :pwd,:address)
    end
 end
 

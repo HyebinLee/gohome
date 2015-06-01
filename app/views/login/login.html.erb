@@ -6,8 +6,7 @@
                 <%=form_tag :action => 'login' do |f| %>
                         <%= label_tag :아이디 %><br>
                         <%= text_field_tag :userid,params[:userid]%>
-                        <br><div style = "margin-top : 10px"><%= label_tag :비밀
-번호 %></div>
+                        <br><div style = "margin-top : 10px"><%= label_tag :비밀번호 %></div>
               <%= text_field_tag :pwd, params[:pwd] %>
 
               <br><div style = "margin-top : 10px"><%= submit_tag "Log in" %></div>
