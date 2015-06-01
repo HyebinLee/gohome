@@ -42,6 +42,10 @@ class ShopController < ApplicationController
 
   def message
   end
+ 
+  def pay
+    @join=Join.all
+  end
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)
