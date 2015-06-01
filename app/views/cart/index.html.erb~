@@ -14,7 +14,6 @@
   <td></td>
  </tr>
 </table>
-<<<<<<< HEAD
 
 <br><table width=100% align=center rules="rows" style="rule-color:black">
 <% @cart.each do |cart| %>
@@ -26,8 +25,8 @@
   <td><%=link_to 'x', cart_path(cart), method: :delete %></td>
  </tr><% end %>
 </table>
+
+<br><div> <%=link_to '구매하기',pay_path %></div>
 <% end %>
-=======
-<br><%=@shop.image%>
->>>>>>> c46eab1c7b981d69f9045a97a62470de881b6b22
+
 

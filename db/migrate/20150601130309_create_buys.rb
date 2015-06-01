@@ -1,10 +1,10 @@
-class CreateShops < ActiveRecord::Migration
+class CreateBuys < ActiveRecord::Migration
   def change
-    create_table :shops do |t|
+    create_table :buys do |t|
       t.text :image
       t.text :product
       t.text :price
-      t.text :text
+      t.integer :num
 
       t.timestamps null: false
     end

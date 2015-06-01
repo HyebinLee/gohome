@@ -112,7 +112,6 @@ visibility:hidden;
 background-color:white;
 "> 
 <table>
-  <% @count=1 %>
   <tr><td>장바구니에 담겼습니다.</td></tr>
   <tr><td>장바구니로 이동하시겠습니까?</td></tr>
   <tr style="text-align:center">
