@@ -16,7 +16,7 @@ class ShopController < ApplicationController
   end
    def create
     @shop=Shop.new(shop_params)
-    @shop.type=shoptype
+#    @shop.type=shoptype
     if @shop.save
         redirect_to @shop
     else
