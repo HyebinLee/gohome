@@ -3,8 +3,12 @@
 <br><p>주문 내역</p>
 <table rules="rows" width="100%"  style="border:grey;text-align:left">
   <tr>
+    <td>IMAGE</td>
+      <td><%= image_tag(itemimage, :width => 50, :height => 50) %></td>
     <td>PRODUCT</td>
     <td style="color:grey"><%=itemproduct%></td>
+    <td>PRICE</td>
+    <td style="color:grey"><%=itemprice%></td>
   </tr>
 </table>
 

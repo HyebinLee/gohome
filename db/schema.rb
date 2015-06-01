@@ -11,16 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601080219) do
+ActiveRecord::Schema.define(version: 20150601104048) do
 
   create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.integer  "shop_id"
-    t.integer  "cart_id"
+    t.text     "image"
+    t.text     "product"
+    t.text     "price"
+    t.integer  "num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,16 +60,6 @@ ActiveRecord::Schema.define(version: 20150601080219) do
     t.text     "product"
     t.text     "price"
     t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "userid"
-    t.text     "birth"
-    t.text     "userpwd"
-    t.text     "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
