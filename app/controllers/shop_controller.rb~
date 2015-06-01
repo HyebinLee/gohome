@@ -14,11 +14,7 @@ class ShopController < ApplicationController
     @cart.product=itemproduct
     @cart.price=itemprice
     @cart.num=1
-    if @cart.save
-        redirect_to @cart
-    else
-        render 'new'    
-    end
+    @cart.save  
   end
   def edit
     @shop=Shop.find(params[:id])
@@ -58,6 +54,10 @@ class ShopController < ApplicationController
   def pay
     @join=Join.all
   end
+  def buy
+    @shop=Shop.all
+  end
+
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)

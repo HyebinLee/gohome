@@ -52,8 +52,19 @@ class ShopController < ApplicationController
   end
  
   def pay
+    @cart=Cart.all
     @join=Join.all
+    @buy=Buy.new
+    @buy.image=itemimage
+    @buy.product=itemproduct
+    @buy.price=itemprice
+    @buy.num=1
+    @buy.save
   end
+  def buy
+    @shop=Shop.all
+  end
+
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)

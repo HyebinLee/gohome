@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
   helper_method :userid
   helper_method :useraddress
   helper_method :reviewproduct
+
+  #helper_method :buyimage
+  #helper_method :buyproduct
+  #helper_method :buyprice
+
 #  helper_method :shoptype
   def itemimage
     @sessImage=Shop.find(session[:item]).image
