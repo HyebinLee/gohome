@@ -3,17 +3,18 @@
 <div class="row">
         <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LOGIN</h1>
         <div class="col-md-6 col-md-offset-3">
-                <%=form_tag :action => 'index' do |f| %>
+                <%=form_tag :action => 'login' do |f| %>
                         <%= label_tag :아이디 %><br>
                         <%= text_field_tag :userid,params[:userid]%>
-                     <br><div style = "margin-top : 10px"><%= label_tag :비밀번호 %></div>
-              <%= password_field_tag :pwd, params[:pwd] %>
+                        <br><div style = "margin-top : 10px"><%= label_tag :비밀
+번호 %></div>
+              <%= text_field_tag :pwd, params[:pwd] %>
 
               <br><div style = "margin-top : 10px"><%= submit_tag "Log in" %></div>
                 <% end %>
                 <div style = "margin-top : 15px">
                 <p>New user? <%=link_to "Sign up now",join_index_path %></p>
-                <p>Forgot ID/PWD? <%=link_to 'Find Id/Passwd',find_path %></p></div>
+                </div>
         </div>
 </div>
 </div>

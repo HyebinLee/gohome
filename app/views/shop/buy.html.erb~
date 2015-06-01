@@ -1,0 +1,5 @@
+<%= render './form' %>
+<p style="text-align:center">결제확인</p>
+
+<br><br><p style="text-align:center">결제가 완료되었습니다.</p>
+

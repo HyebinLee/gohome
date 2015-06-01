@@ -33,6 +33,10 @@
     <td><%=f.text_field :userid, :style =>"width:95%"%></td>
     <td><%= button_tag '중복확인',  :data => {:remote => true, :url => url_for(:controller => "join",  :action => "check" ), :with => "'userid=' + $(userid).value"}  %>
 </td>
+    <tr>
+    <td><%=f.label :Email %></td>
+    <td ColSpan="2"><%= f.text_field :email, :style => "width:100%" %></td>
+    </tr>
   </tr>
   <tr>
     <td><%=f.label :생년월일 %></td>

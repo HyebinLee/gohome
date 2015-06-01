@@ -46,8 +46,16 @@ class ShopController < ApplicationController
   end
  
   def pay
+    @cart=Cart.all
     @join=Join.all
+    @buy=Buy.new
+    @buy.image=itemimage
+    @buy.product=itemproduct
+    @buy.price=itemprice
+    @buy.num=1
+    @buy.save
   end
+<<<<<<< HEAD
   def inside
     $var=3
     @cart=Cart.new
@@ -61,6 +69,12 @@ class ShopController < ApplicationController
       page.replace_html 'cart', :partial => cart_index_path
     end
   end
+=======
+  def buy
+    @shop=Shop.all
+  end
+
+>>>>>>> 4137e5f507cc1e83e3f610067679d7a8e697e03f
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)

@@ -21,32 +21,15 @@
 </table>
 <% else %>
 <p>Your name is <%=username%></p>
-
 <br><p>구매 물품</p>
-<% if @buy.empty? %>
-	<br><p>구매한 상품이 없습니다.</p>
-<% else %>
-<br><table width=100% align=center rules="rows" style="rule-color:grey">
- <tr style="border-bottom: 2px solid black">
+<table width=100% align=center rules="rows" style="rule-color:grey">
+  <tr style="border-bottom: 2px solid black">
   <td>PICTURE</td>
   <td>PRODUCT</td>
   <td>PRICE</td>
-  <td>수량</td>
-  <td></td>
- </tr>
+  </tr>
 </table>
 
-<br><table width=100% align=center rules="rows" style="rule-color:black">
-<% @buy.each do |buy| %>
-<tr style="border-bottom: 2px solid black">
-  <td><%= image_tag(buy.image, :width => 50, :height => 50)%></td>
-  <td><%=buy.product%></td>
-  <td><%=buy.price%></td>
-  <td><%=buy.num%></td>
- </tr><% end %>
-</table>
-
-<%end%>
 <%end%>
 
 

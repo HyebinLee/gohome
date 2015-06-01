@@ -30,9 +30,9 @@
   </tr>
 </table>
 <br><p>결제 방법 선택</p>
-<input type="checkbox" >카드결제</div>
-<input type="checkbox" >무통장입금</div>
-<input type="checkbox" >계좌이체</div>
+<input type="radio_button" >카드결제</div>
+<input type="radio_button" >무통장입금</div>
+<input type="radio_button" >계좌이체</div>
 
 <br><br><%=link_to '결제하기',buy_path %>
 <br><br>
