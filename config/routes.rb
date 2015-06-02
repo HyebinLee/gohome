@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/inside', :controller => 'shop', :action => 'inside'
   get '/buy', :controller => 'shop', :action => 'buy'
   get '/find',:controller => 'login', :action =>'find'
+  get '/send_mail',:controller=>'login',:action=>'send_mail'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

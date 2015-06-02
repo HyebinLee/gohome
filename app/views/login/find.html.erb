@@ -2,7 +2,7 @@
 <div align = "center" style = "margin-top : 50px">
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">Find Id or Password</h1></div>
 <br><br><br>
-<%= label_tag :메일주소 %><br>
- <%= text_field_tag :email,params[:email]%>
+ <%= label_tag :메일주소 %><br>
+ <%= text_field_tag :email%>
                         
-<br><%= button_tag '아이디 찾기' %>  <%= button_tag '비밀번호 찾기' %>
+<br><%=link_to '아이디 찾기', send_mail_path%><%= button_tag '아이디 찾기', :data => {:remote => true, :url => url_for(:controller => "login",  :action => "send_mail")}%>  <%= button_tag '비밀번호 찾기' %>
