@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
   helper_method :userid
   helper_method :useraddress
   helper_method :reviewproduct
+  helper_method :shoptype
+
+  #helper_method :buyimage
+  #helper_method :buyproduct
+  #helper_method :buyprice
+
 #  helper_method :shoptype
   def itemimage
     @sessImage=Shop.find(session[:item]).image
@@ -47,7 +53,7 @@ class ApplicationController < ActionController::Base
   def reviewproduct
     @revName=Shop.find(session[:review]).product
   end
- # def shoptype
- #   @stype='wow'
- # end
+  def shoptype
+    @shoptype='wow'
+  end
 end

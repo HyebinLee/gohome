@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   helper_method :reviewproduct
   helper_method :shoptype
 
+  #helper_method :sendmail
   #helper_method :buyimage
   #helper_method :buyproduct
   #helper_method :buyprice
