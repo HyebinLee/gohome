@@ -1,13 +1,12 @@
 <style type="text/css">
 a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
 </style>
-
 <script>
 $(function(){
     $("#shop").change(function(){
         shoptype=$("#shop option:selected").text()
         //alert("클릭입니다!!");
-       // alert(shoptype);
+        //alert($shoptype);
         window.location=$(this).val();
     });
 
@@ -26,6 +25,7 @@ $(function(){
 </table>
 
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">gohome</h1>
+
 
 <table width=100% align=center><tr>
 <td><a><%=link_to root_path, controller: 'first' do%>

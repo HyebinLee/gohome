@@ -1,9 +1,9 @@
 <%=render './form' %>
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">MYPAGE</h1>
+<p style="text-align:center;color:#4c4c4c">MYPAGE</p>
 
 <% if current_user==2 %>
-<p>New user? <%=link_to "Sign up now",join_index_path %></p>
-<p>user? <%=link_to "login",login_index_path %></p>
+<p style="text-align:center">New user? <%=link_to "Sign up now",join_index_path %></p>
+<p style="text-align:center">user? <%=link_to "login",login_index_path %></p>
 
 <% elsif current_user==0 %>
 <table width=100% align=center rules="rows" style="rule-color:grey">
@@ -20,33 +20,20 @@
   <% end %>
 </table>
 <% else %>
-<p>Your name is <%=username%></p>
-
-<br><p>구매 물품</p>
-<% if @buy.empty? %>
-	<br><p>구매한 상품이 없습니다.</p>
-<% else %>
-<br><table width=100% align=center rules="rows" style="rule-color:grey">
- <tr style="border-bottom: 2px solid black">
-  <td>PICTURE</td>
-  <td>PRODUCT</td>
-  <td>PRICE</td>
-  <td>수량</td>
-  <td></td>
- </tr>
+<br>
+<table width=100% rules="rows" >
+  <tr style="border:2px black solid;"></tr>
+  <tr>
+   <td align=center><a href=mypages/order><img src="order.png" alt="ORDER"/></a></td>
+  </tr>
+  <tr>
+   <td align=center><a href=mypages/inform><img src="inform.JPG" alt="INFORM"/></a></td>
+  </tr>
+  <tr>
+   <td align=center><a href=mypages/board><img src="board.JPG" alt="BOARD"/></a></td>
+  </tr>
+  <tr style="border:2px black solid;"></tr>
 </table>
-
-<br><table width=100% align=center rules="rows" style="rule-color:black">
-<% @buy.each do |buy| %>
-<tr style="border-bottom: 2px solid black">
-  <td><%= image_tag(buy.image, :width => 50, :height => 50)%></td>
-  <td><%=buy.product%></td>
-  <td><%=buy.price%></td>
-  <td><%=buy.num%></td>
- </tr><% end %>
-</table>
-
-<%end%>
 <%end%>
 
 

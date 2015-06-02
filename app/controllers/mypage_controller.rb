@@ -6,7 +6,7 @@ class MypageController < ApplicationController
   end
 
   def show
-	@buy = Buy.find(params[:id])
+#	@buy = Buy.find(params[:id])
   end
   def new
     @buy = Buy.new
@@ -17,6 +17,18 @@ class MypageController < ApplicationController
   def edit
     @buy = Buy.find(params[:id])
   end
+  def order
+    @buy= Buy.all
+  end
+
+  def inform
+    @join=Join.all
+  end
+
+  def board
+    @review=Review.all
+  end
+
   private
    def buy_params
 	  params.require(:buy).permit(:image, :product, :price, :num)

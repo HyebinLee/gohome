@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :username
   helper_method :userid
+  helper_method :useremail
+  helper_method :userbirth
   helper_method :useraddress
   helper_method :reviewproduct
   helper_method :shoptype
@@ -50,10 +52,16 @@ class ApplicationController < ActionController::Base
    def useraddress
     @sessaddress=Join.find(session[:user_id]).address
   end
+  def userbirth
+    @sessbirth=Join.find(session[:user_id]).birth
+  end
+  def useremail
+    @sessemail=Join.find(session[:user_id]).email
+  end
   def reviewproduct
     @revName=Shop.find(session[:review]).product
   end
   def shoptype
-    @shoptype='wow'
+    @shoptype=$shoptype
   end
 end

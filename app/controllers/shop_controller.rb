@@ -15,10 +15,10 @@ class ShopController < ApplicationController
   end
   def new
     @shop = Shop.new
+
   end
    def create
     @shop=Shop.new(shop_params)
-#    @shop.type=shoptype
     if @shop.save
         redirect_to @shop
     else
@@ -56,7 +56,7 @@ class ShopController < ApplicationController
     @buy.save
   end
   def inside
-    $var=3
+    $var=1
     @cart=Cart.new
     @cart.image=itemimage
     @cart.product=itemproduct

@@ -1,0 +1,27 @@
+<%=render './form' %>
+
+<br><p>게시물 관리</p>
+<% if @review.empty? %>
+        <br><p>작성한 게시물이 존재하지 않습니다.</p>
+<% else %>
+<br><table width=100% align=center rules="rows" style="rule-color:grey">
+ <tr style="border: 2px solid grey"></tr>
+ <tr style="border: 1px solid grey;background-color:#cccccc">
+  <td>NUM</td>
+  <td>PRODUCT</td>
+  <td>SUBJECT</td>
+  <td>NAME</td>
+  <td>DATE</td>
+ </tr>
+
+<% @review.each do |review| %>
+<% if review.name==username %>
+<tr style="border: 1px solid grey">
+  <td><%= review.num%></td>
+  <td><%= review.product%></td>
+  <td><%= link_to review.subject, review_path(review)%></td>
+  <td><%= review.name%></td>
+  <td><%= review.date%></td>
+ </tr><% end %><% end %>
+</table>
+<% end %>
