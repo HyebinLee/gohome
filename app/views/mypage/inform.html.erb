@@ -1,5 +1,5 @@
 <%=render './form' %>
-
+<% if current_user==1 %>
 <br><p>회원정보</p>
 <br><table width=100% align=center rules="rows" style="rule-color:grey">
  <tr style="with:100%;border: 2px solid grey;background-color:#cccccc">
@@ -26,4 +26,25 @@
   <td><%=useraddress%></td>
  </tr>
 </table>
+<% else %>
+<br><p>회원 리스트</p>
+<table width=100% align=center rules="rows" style="rule-color:grey">
+ <tr style="border: 2px solid grey"></tr>
+ <tr style="border: 1px solid grey;background-color:#cccccc">
+  <td>NAME</td>
+  <td>ID</td>
+  <td>EMAIL</td>
+  <td>ADDRESS</td>
+ </tr>
 
+<% @join.each do |join| %>
+<% if join.name!=username %>
+<tr style="border: 1px solid grey">
+  <td><%= join.name %></td>
+  <td><%= join.userid%></td>
+  <td><%= join.email%></td>
+  <td><%= join.address %></td>
+ </tr><% end %><% end %>
+</table>
+
+<% end %>

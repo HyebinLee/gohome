@@ -29,6 +29,8 @@ class MypageController < ApplicationController
     @review=Review.all
   end
 
+  def static
+  end
   private
    def buy_params
 	  params.require(:buy).permit(:image, :product, :price, :num)

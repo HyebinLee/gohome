@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get '/mypages/order',:controller => 'mypage', :action =>'order'
   get '/mypages/inform',:controller => 'mypage', :action =>'inform'
   get '/mypages/board',:controller => 'mypage', :action =>'board'
+  get '/mypages/static',:controller => 'mypage', :action =>'static'
+  
   get '/send_mail',:controller=>'login',:action=>'send_mail'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -88,6 +88,7 @@ layer.style.visibility="hidden";
   </tr>
 
   <% @review.each do |review| %>
+    <% if review.product == @shop.product %>
     <tr>
       <td><%= review.num %></td>
       <td><%= review.product %></td>
@@ -95,6 +96,7 @@ layer.style.visibility="hidden";
       <td><%= review.name %></td>
       <td><%= review.date %></td>
       <td><%= review.star %></td>
+    <% end %>
     </tr>
   <% end %>
 </table>

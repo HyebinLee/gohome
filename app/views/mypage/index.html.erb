@@ -6,18 +6,13 @@
 <p style="text-align:center">user? <%=link_to "login",login_index_path %></p>
 
 <% elsif current_user==0 %>
-<table width=100% align=center rules="rows" style="rule-color:grey">
-  <tr style="border-bottom: 2px solid black">
-    <td>NAME</td>
-    <td>ID</td>
+<table width=100% rules="rows">
+  <tr style="border:2px black solid;"></tr>
+  <tr>
+  <td align=center><a href=mypages/inform><img src="minform.JPG" alt="INFORM"/></a></td>
   </tr>
-
-  <% @join.each do |join| %>
-    <tr>
-      <td><%= join.name %></td>
-      <td><%= link_to join.userid, join_path(join) %></td>
-    </tr>
-  <% end %>
+  <tr>
+  <td align=center><a href=mypages/static><img src="static.JPG" alt="STATIC"/></a></td>
 </table>
 <% else %>
 <br>
