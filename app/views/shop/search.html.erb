@@ -1,0 +1,19 @@
+<%= render './form' %>
+
+<% if @shop == [] %>
+  <br><p style="text-align:center">검색 결과가 존재하지 않습니다.</p>
+<% else %>
+<table><tr>
+  <% @shop.each do |shop| %>
+    <td width=200>
+<div class="panel"><div class="row panel-body" >
+<div class="col-md-3 text-right">
+<a><%= image_tag(shop.image, :width => 120, :height => 170)%></a></div>
+<div class="col-md-3">
+<%= link_to shop.product, shop_path(shop) %>
+<p><%= shop.price %> won</p>
+    </div>
+</div></div>
+</td><% end %></tr></table>
+</div>
+<% end %>

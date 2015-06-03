@@ -73,7 +73,10 @@ class ShopController < ApplicationController
   def buy
     @shop=Shop.all
   end
-
+  def search
+    @shop=Shop.where("product LIKE?", "%#{params[:search]}%")
+  #  @shop=Shop.find_by! product:params[:search]
+  end
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)
