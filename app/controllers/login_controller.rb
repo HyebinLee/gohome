@@ -26,28 +26,18 @@ class LoginController < ApplicationController
  
   def find
    # flash[:alert]="in the cart"
-    $address=params[:email]
-    logger.debug("wow")
-    logger.debug($address)
   #  flash[:alert]="in the cart"
   #  render :update do |page|
   #    page.replace_html 'find', :partial => send_mail_path, :object => address
   #  end
   end 
   def send_mail
-    #$address=params[:email]
-    #logger.debug("wow")
-    #logger.debug($address)
-    #address=$address
+    address=params[:email]
     require 'gmail'
-logger.debug("1")
     gmail = Gmail.connect('tmanel1248@gmail.com','fiona3009')
-logger.debug("2")
     gmail.logged_in?
-logger.debug("3")
     gmail.deliver do
-	logger.debug("4")
-	to "ppika1231@gmail.com"
+	to address
 	subject "gohome 계정찾기 메일 입니다."
 	text_part do
 	body "비밀번호는 aaa 입니다"

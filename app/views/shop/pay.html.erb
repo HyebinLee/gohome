@@ -5,11 +5,11 @@
 <% @cart.each do |cart| %>
   <tr>
     <td>IMAGE</td>
-      <td><%= image_tag(itemimage, :width => 50, :height => 50) %></td>
+      <td><%= image_tag(cart.image, :width => 50, :height => 50) %></td>
     <td>PRODUCT</td>
-    <td style="color:grey"><%=itemproduct%></td>
+    <td style="color:grey"><%=cart.product%></td>
     <td>PRICE</td>
-    <td style="color:grey"><%=itemprice%></td>
+    <td style="color:grey"><%=cart.price%></td>
   </tr><%end%>
 </table>
 

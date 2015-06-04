@@ -68,7 +68,7 @@ class ShopController < ApplicationController
   #    page.replace_html 'cart', :partial => cart_index_path
  #   end
     flash[:alert]="장바구니에 담겼습니다."
-  #   render 'cart_index_path'
+     render 'cart_index_path'
   end
   def buy
     @shop=Shop.all

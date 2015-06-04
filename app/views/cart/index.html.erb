@@ -1,5 +1,23 @@
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+  $(function(){
+    //전체선택 체크박스 클릭
+    $("#allCheck").click(function(){
+    //만약 전체 선택 체크박스가 체크된상태일경우
+      if($("#allCheck").prop("checked")) {
+        //해당화면에 전체 checkbox들을 체크해준다
+        $("input[type=checkbox]").prop("checked",true);
+        // 전체선택 체크박스가 해제된 경우
+      } else {
+        //해당화면에 모든 checkbox들의 체크를해제시킨다.
+        $("input[type=checkbox]").prop("checked",false);
+      }
+    })
+  })
+</script>
+
+
 <%=render './form' %>
-<h1>Cart Page</h1>
 <br><p>장바구니 목록</p>
 
 <% if @cart.empty? %>
@@ -7,6 +25,7 @@
 <% else %>
 <br><table width=100% align=center rules="rows" style="rule-color:grey">
  <tr style="border-bottom: 2px solid black">
+  <td><input type="checkbox" id="allCheck"/><td>
   <td>PICTURE</td>
   <td>PRODUCT</td>
   <td>PRICE</td>
@@ -19,6 +38,7 @@
 <% @cart.each do |cart| %>
   <% if cart.user==username %>
 <tr style="border-bottom: 2px solid black">
+  <td><input type="checkbox" name="check"/></td>
   <td><%= image_tag(cart.image, :width => 50, :height => 50)%></td>
   <td><%=cart.product%></td>
   <td><%=cart.price%></td>
