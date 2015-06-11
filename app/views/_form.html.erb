@@ -13,6 +13,8 @@ $(function(){
 })
 </script>
 <script language="Javascript">
+var tmp;
+  if(!tmp){
   function popup(){
     var bannerWin=window.open(this.href,"bannerWindow","resizable=no, scrollbars=no, width=250, height=320");
   browser_name=navigator.appName;
@@ -21,6 +23,8 @@ $(function(){
     }
   }
   popup();
+  tmp=true;
+  }
 </script>
 <script language="JavaScript">
   window.moveTo(0,0);
