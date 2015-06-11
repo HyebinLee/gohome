@@ -18,12 +18,18 @@
 
 
 <%=render './form' %>
-<br><p>장바구니 목록</p>
+<% if current_user==2 %>
+<p style="text-align:center;font-size:10px">New user? <%=link_to "Sign up now",join_index_path %></p>
+<p style="text-align:center;font-size:10px">user? <%=link_to "login",login_index_path %></p>
+<% elsif current_user==0 %>
+<br><p style="text-align:center;font-size:10px">Manager can not buy product!</p>
+<% else %>
+<br><p style="font-size:10px">장바구니 목록</p>
 
 <% if @cart.empty? %>
-	<br><p>담긴 상품이 없습니다.</p>
+	<br><p style="font-size:10px">담긴 상품이 없습니다.</p>
 <% else %>
-<br><table width=100% align=center rules="rows" style="rule-color:grey">
+<br><table width=100% align=center rules="rows" style="rule-color:grey;font-size:10px">
  <tr style="border-bottom: 2px solid black">
   <td><input type="checkbox" id="allCheck"/><td>
   <td>PICTURE</td>
@@ -34,7 +40,7 @@
  </tr>
 </table>
 
-<br><table width=100% align=center rules="rows" style="rule-color:black">
+<br><table width=100% align=center rules="rows" style="rule-color:black;font-size:10px">
 <% @cart.each do |cart| %>
   <% if cart.user==username %>
 <tr style="border-bottom: 2px solid black">
@@ -47,7 +53,7 @@
  </tr><% end %><% end %>
 </table>
 
-<br><div style = "margin-top : 50px;text-align :center"><%=link_to '구매하기',pay_path %></div>
+<br><div style = "margin-top : 50px;text-align :center;font-size:10px"><%=link_to '구매하기',pay_path %></div>
 <% end %>
 
-
+<% end %>

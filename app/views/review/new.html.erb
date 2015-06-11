@@ -1,7 +1,9 @@
 <%=render './form' %>
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">REVIEW</h1>
+<br>
+<img src="../review.png" width="100%"/>
+
 <%= form_for :review, url: review_index_path do |f| %>
-<table width="100%" border="1">
+<table width="100%" border="1" style="font-size:10px">
   <tr>
     <td><%= f.label :num %></td>
     <td><%= f.text_field :num, :style => "width:100%;border:0" %></td>
@@ -35,7 +37,7 @@
   </tr>
 <table>
 
-<table align="center">
+<table align="center" style="font-size:10px">
   <tr style="text-align:center">
     <td width=40><%=link_to '이전', review_index_path %></td>
     <td width=40><%= f.submit '등록'%></td>
