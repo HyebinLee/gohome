@@ -1,7 +1,30 @@
+<script> 
+function layer1_popup(){ 
+var layer1 = document.getElementById("card"); 
+layer1.style.visibility="visible";
+} 
+function layer2_popup(){ 
+var layer2 = document.getElementById("bankbook"); 
+layer2.style.visibility="visible";
+} 
+function layer3_popup(){ 
+var layer3 = document.getElementById("phone"); 
+layer3.style.visibility="visible";
+} 
+</script>
+
+<script> 
+function hidpopup(){ 
+var layer = document.getElementById("card"); 
+layer.style.visibility="hidden";
+} 
+</script>
+
 <%= render './form' %>
 <p style="text-align:center">주문정보</p>
 <br><p>주문 내역</p>
 <table rules="rows" width="100%"  style="border:grey;text-align:left">
+
 <% @cart.each do |cart| %>
   <tr>
     <td>IMAGE</td>
@@ -13,8 +36,7 @@
   </tr><%end%>
 </table>
 
-
-<br><p>결제자 정보</p>
+<br><p>주문자 정보</p>
 <table rules="rows" width="100%"  style="border:grey;text-align:left">
   <tr>
     <td>NAME</td>
@@ -29,10 +51,132 @@
     <td style="color:grey"><%=useraddress%></td>
   </tr>
 </table>
-<br><p>결제 방법 선택</p>
-<input type="checkbox" >카드결제</div>
-<input type="checkbox" >무통장입금</div>
-<input type="checkbox" >계좌이체</div>
+<br>
+<table width="100%">
+  <tr>
+    <td>결제 방법 선택</td>
+  </tr>
+  <tr>
+    <td><input type="radio" name="pay" value="card" >카드결제</div>
+    <input type="radio" name="pay" value="bankbook">무통장입금</div><input type="radio" name="pay" value="phone">휴대폰 결제</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td style="text-align:center"><input type="button" value='결제하기' onclick='show_checked();' /></td>
+  </tr>
+</table>
 
-<br><br><%=link_to '결제하기',buy_path %>
-<br><br>
+<script>
+function show_checked() {
+	var obj = document.getElementsByName('pay');
+	var checked_index = -1;
+	var checked_value = '';
+	for( i=0; i<obj.length; i++) {
+		if(obj[0].checked) 
+                	layer1_popup();
+                else if(obj[1].checked)
+			layer2_popup();
+		else if(obj[2].checked)
+			layer3_popup();
+	}
+}
+</script>
+
+<div id="card" 
+style="position:absolute;
+border:double;
+top:450px;
+left:250px;
+width:430px;
+height:160px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+">
+<table>
+  <tr>
+    <td width="20" colSpan="2">카드 번호</td>
+    <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" size="3px"/></td>
+  </tr>
+  <tr>
+    <td width="20" colSpan="2">유효기간</td>
+    <td width="6px"><input type="text" size="3px"/></td><td> 월 </td>
+    <td width="6px"><input type="text" size="3px"/></td><td> 일 </td>
+    <td colSpan="3"></td>
+  </tr>
+  <tr>
+    <td width="20" colSpan="2">CVC 번호</td>
+    <td width="6px"><input type="text" size="3px"/></td>
+    <td colSpan="5"></td>
+  </tr>
+  <tr>
+    <td ColSpan="9" style="text-align:center"><%=link_to '확인',buy_path%></td>
+  </tr>
+</table>
+
+</div>
+
+<div id="bankbook" 
+style="position:absolute;
+border:double;
+top:500px;
+left:250px;
+width:300px;
+height:100px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+">
+<table>
+  <tr>
+    <td>예금주 : 관리자</td>
+  </tr>
+  <tr>
+    <td>계좌 : 국민은행 123-4567-1234-55</td>
+  </tr>
+  <tr>
+    <td style="text-align:center"><%=link_to '확인',buy_path%></td>
+  </tr>
+</table>
+</div>
+
+<div id="phone" 
+style="position:absolute;
+border:double;
+top:500px;
+left:250px;
+width:300px;
+height:100px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+">
+<table>
+  <tr>
+    <td>통신사</td>
+    <td colSpan="4"><div><select name="통신사" id="통신사" style='background: transparent;border-style : none'>
+    <option value=""/>통신사</option>
+    <option value="sk"/>SKT</option>
+    <option value="kt"/>KT</option>
+    <option value="lg"/>LG U+</option>
+    </select></div></td>
+  </tr>
+
+  <tr>
+    <td>휴대폰 번호</td>
+  </tr>
+  <tr>
+    <td><input type="text" size="3px"/></td><td width="1px"> - </td>
+    <td><input type="text" size="3px"/></td><td width="1px"> - </td>
+    <td><input type="text" size="3px"/></td>
+  </tr>
+  <tr>
+    <td ColSpan="7" style="text-align:center"><%=link_to '확인',buy_path%></td>
+  </tr>
+</table>
+</div>
+

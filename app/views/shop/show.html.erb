@@ -74,7 +74,7 @@ layer.style.visibility="hidden";
     <tr></tr><tr></tr>
   <% end %>
   <tr>
-    <td style="color:grey"><%=@shop.text%></td>
+    <td ColSpan="5" style="color:grey;text-align:center"><br><%= image_tag(@shop.text_url, :width => "60%", :height => 200) if @shop.text.present? %></td>
   </tr>
   <tr><td><br>REVIEW</td></tr>
 <tr><td ColSpan=6><p style="text-align:right"><%=link_to '글쓰기', new_review_path %></p></td></tr>

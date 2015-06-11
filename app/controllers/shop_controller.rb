@@ -47,6 +47,10 @@ class ShopController < ApplicationController
  
   def pay
     @cart=Cart.all
+    #params[:sum]=Cart.sum("price")
+    #Cart.all.each do |cart|
+    #  params[:sum]=params[:sum]+cart.price
+    #end
     @join=Join.all
     @buy=Buy.new
     @buy.image=itemimage

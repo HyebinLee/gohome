@@ -30,6 +30,7 @@ class MypageController < ApplicationController
   end
 
   def static
+    @join=Join.all
   end
   private
    def buy_params
