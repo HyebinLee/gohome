@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/shops/search', :controller => 'shop', :action => 'search'
  
   get '/send_mail',:controller=>'login',:action=>'send_mail'
+  get '/undefined',:controller=>'first',:action=>'popup'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

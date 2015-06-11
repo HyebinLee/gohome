@@ -12,6 +12,19 @@ $(function(){
 
 })
 </script>
+<script language="Javascript">
+  function popup(){
+    var bannerWin=window.open(this.href,"bannerWindow","resizable=no, scrollbars=no, width=250, height=320");
+  browser_name=navigator.appName;
+   if(browser_name=="Netscape"){
+     bannerWin.focus();
+    }
+  }
+  popup();
+</script>
+<script language="JavaScript">
+  window.moveTo(0,0);
+</script>
 
 <table width=100% align=right height=25>
   <tr>
@@ -94,3 +107,4 @@ $(function(){
   <% end %> </a></td>
 <%end%>
 </tr><table>
+
