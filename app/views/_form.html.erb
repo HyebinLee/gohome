@@ -2,6 +2,7 @@
 a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
 </style>
 
+<% if pop_cnt==0 %>
 <script language="Javascript">
 var tmp;
   if(!tmp){
@@ -18,7 +19,9 @@ var tmp;
 </script>
 <script language="JavaScript">
   window.moveTo(0,0);
+  pop_cnt++;
 </script>
+<%end%>
 
 <table width=100% align=right height=25>
   <tr>

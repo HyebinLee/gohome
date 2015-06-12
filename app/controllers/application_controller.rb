@@ -13,13 +13,21 @@ class ApplicationController < ActionController::Base
   helper_method :userbirth
   helper_method :useraddress
   helper_method :reviewproduct
-  helper_method :shoptype
+ 
+  helper_method :pop_cnt
+  helper_method :delivery
   #helper_method :sendmail
   #helper_method :buyimage
   #helper_method :buyproduct
   #helper_method :buyprice
 
 #  helper_method :shoptype
+  def delivery
+    @sessDelivery=0;
+  end
+  def pop_cnt
+    @sessPopcnt=0;
+  end
   def itemimage
     @sessImage=Shop.find(session[:item]).image
   end
