@@ -92,6 +92,20 @@ class ShopController < ApplicationController
   def dish
     @shop = Shop.all
   end
+  def room_deco
+	@shop = Shop.all
+  end
+  def cleans
+   @shop = Shop.all
+  end 
+  def bathroom
+    @shop = Shop.all
+	end
+  def etc
+    @shop = Shop.all
+  end
+
+
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text, :count, :value)

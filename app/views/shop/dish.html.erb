@@ -8,6 +8,7 @@
 <table>
  <tr>
    <% @shop.each do |shop| %>
+	<%if shop.value==2 %>
 	<td width=200>
 <div class="panel"><div class="row panel-body" >
   <div class="col-md-3 text-right">
@@ -18,5 +19,6 @@
 </div>
  </div></div>
   </td>
+  <%end%>
 	   <%end%> </tr></table>
 	</div>

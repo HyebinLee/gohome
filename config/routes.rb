@@ -23,7 +23,10 @@ Rails.application.routes.draw do
 
   get '/cup', :controller => 'shop', :action => 'cup'
   get '/dish', :controller => 'shop', :action => 'dish'
-
+  get '/room_deco',:controller =>'shop',:action =>'room_deco'
+  get '/cleans', :controller => 'shop', :action => 'cleans'
+  get '/bathroom', :controller => 'shop', :action => 'bathroom'
+  get '/etc', :controller => 'shop', :action => 'etc'
 
   get '/find',:controller => 'login', :action =>'find'
   get '/mypages/order',:controller => 'mypage', :action =>'order'
