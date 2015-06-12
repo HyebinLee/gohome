@@ -19,12 +19,8 @@ class ShopController < ApplicationController
   end
    def create
     @shop=Shop.new(shop_params)
-<<<<<<< HEAD
     @shop.count=0
     if @shop.save
-=======
-	 if @shop.save
->>>>>>> 8fff0edfbc63820fb5de7279c817cb6504ac48e0
         redirect_to @shop
     else
         render 'new'
