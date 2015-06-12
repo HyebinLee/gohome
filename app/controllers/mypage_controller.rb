@@ -32,6 +32,9 @@ class MypageController < ApplicationController
   def static
     @join=Join.all
   end
+  def parcel
+    @time=(Time.now.to_i-delivery.to_i)/60
+  end
   private
    def buy_params
 	  params.require(:buy).permit(:image, :product, :price, :num)
