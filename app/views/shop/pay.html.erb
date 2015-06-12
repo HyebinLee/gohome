@@ -21,9 +21,9 @@ layer.style.visibility="hidden";
 </script>
 
 <%= render './form' %>
-<p style="text-align:center">주문정보</p>
-<br><p>주문 내역</p>
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<p style="text-align:center;font-size:10px">주문정보</p>
+<br><p style="font-size:10px">주문 내역</p>
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
 
 <% @cart.each do |cart| %>
   <tr>
@@ -36,8 +36,8 @@ layer.style.visibility="hidden";
   </tr><%end%>
 </table>
 
-<br><p>주문자 정보</p>
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<br><p style="font-size:10px">주문자 정보</p>
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
   <tr>
     <td>NAME</td>
     <td style="color:grey"><%=username%></td>
@@ -52,7 +52,7 @@ layer.style.visibility="hidden";
   </tr>
 </table>
 <br>
-<table width="100%">
+<table style="font-size:10px" width="100%">
   <tr>
     <td>결제 방법 선택</td>
   </tr>
@@ -94,7 +94,7 @@ z-index:1;
 visibility:hidden;  
 background-color:white;
 ">
-<table>
+<table style="font-szie:10px">
   <tr>
     <td width="20" colSpan="2">카드 번호</td>
     <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
@@ -131,7 +131,7 @@ z-index:1;
 visibility:hidden;  
 background-color:white;
 ">
-<table>
+<table style="font-size:10px">
   <tr>
     <td>예금주 : 관리자</td>
   </tr>
@@ -155,10 +155,10 @@ z-index:1;
 visibility:hidden;  
 background-color:white;
 ">
-<table>
+<table style="font-size:10px">
   <tr>
     <td>통신사</td>
-    <td colSpan="4"><div><select name="통신사" id="통신사" style='background: transparent;border-style : none'>
+    <td colSpan="4"><div><select name="통신사" id="통신사" style='background: transparent;border-style : none;font-size:10px'>
     <option value=""/>통신사</option>
     <option value="sk"/>SKT</option>
     <option value="kt"/>KT</option>

@@ -81,6 +81,7 @@ class ShopController < ApplicationController
       @shop.count+=1
       @shop.save
     end
+    Cart.delete_all(user:  username)
   end
   def search
     @shop=Shop.where("product LIKE?", "%#{params[:search]}%")
