@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get '/bathroom', :controller => 'shop', :action => 'bathroom'
   get '/etc', :controller => 'shop', :action => 'etc'
 
+  get '/shop2', :controller => 'shop', :action => 'shop2'
+  get '/shop3', :controller => 'shop', :action => 'shop3'
+  get '/shop4', :controller => 'shop', :action => 'shop4'
+
   get '/find',:controller => 'login', :action =>'find'
   get '/mypages/order',:controller => 'mypage', :action =>'order'
   get '/mypages/inform',:controller => 'mypage', :action =>'inform'

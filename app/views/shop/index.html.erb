@@ -1,17 +1,24 @@
 <%=render './form' %>
+<table>
+<tr>
+<td valign="top">
+<br>
 <nav class="navbar navbar-default" role="navigation">
- <div class="container">
+ <div class="container" style="font-size:12px">
   <ul class="nav navbar-nav navbar-left">
    <li><a href="/cup">cup/tumbler</a></li>
 	<li><a href="/dish">dishes</a></li>
-	<li><a href="/room_deco">room deco</a></li>
-	<li><a href="/cleans">clean products</a></li>
-	<li><a href="/bathroom">for bathroom</a></li>
-	<li><a href="/etc">etc props</a></li>
+	<li><a href="/room_deco">room_deco</a></li>
+	<li><a href="/cleans">clean_products</a></li>
+	<li><a href="/bathroom">for_bathroom</a></li>
+	<li><a href="/etc">etc_props</a></li>
   </ul>
  </div>
 </nav>
-
+</td>
+<td><div></div></td><td><div></div></td><td><div></div></td>
+<td><div></div></td><td><div></div></td>
+<td>
 <% if current_user==0 %>
 <p style="text-align:right;font-size:10px"><%=link_to '글쓰기', new_shop_path %></p>
 <%else%> <p></p> 
@@ -36,11 +43,11 @@
 <div>---------------------------------------------------------------------------------------------------------------------</div>
 <table style="font-size:10px" width="100%">
 <tr><td>일반 상품</td></tr>
-<tr><td style="text-align:right"><div><select name="최신상품순" onchange="alert(this.value)" id="option" style='background: transparent;border-style : none;font-size:10px'>
-    <option value="1" selected="selected"/>최신상품순</option>
-    <option value="2"/>인기상품순</option>
-    <option value="3"/>가격높은순</option>
-    <option value="4"/>가격낮은순</option>
+<tr><td style="text-align:right"><div><select name="최신상품순" onchange="window.open(this.value,'_self');" id="option" style='background: transparent;border-style : none;font-size:10px'>
+    <option value="shop" selected="selected"/>최신상품순</option>
+    <option value="shop2"/>인기상품순</option>
+    <option value="shop3"/>가격높은순</option>
+    <option value="shop4"/>가격낮은순</option>
     </select></div></td>
   </tr>
 </table>
@@ -60,3 +67,6 @@
 <%end%> </tr></table>
 </div>
 
+</td>
+</tr>
+</table>
