@@ -1,6 +1,9 @@
 <%= render './form' %>
 
 <p style="font-size:10px">배송관리</p>
+<% if delivery ==0 %>
+ <p style="font-size:10px;text-align:center">주문한 상품이 존재하지 않습니다.</p>
+<% else %>
 <p style="font-size:10px">주문 후 시간 : <%=@time%>분</p>
 <p style="font-size:10px">배달 예정 소요 시간 : 20분</p><br>
 <% if @time<3 %>
@@ -44,4 +47,4 @@
   <% end %>
 
 </table>
-<% end %>
+<% end %><% end %>

@@ -23,7 +23,11 @@ class ApplicationController < ActionController::Base
 
 #  helper_method :shoptype
   def delivery
-    @sessDelivery=Count.find(session[:time]).time
+    if session[:time] == nil || session[:time] == -1
+      @sessDelivery=0;
+    else
+      @sessDelivery=Count.find(session[:time]).time
+    end
   end
   def pop_cnt
     @sessPopcnt=0;
