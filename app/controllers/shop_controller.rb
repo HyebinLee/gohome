@@ -105,6 +105,17 @@ class ShopController < ApplicationController
     @shop = Shop.all
   end
 
+  def shop2
+    @shop=Shop.order(count: :desc)
+  end
+
+  def shop3
+    @shop=Shop.order(price: :desc)
+  end
+
+  def shop4
+    @shop=Shop.order(price: :asc)
+  end
 
   private
     def shop_params
