@@ -38,7 +38,7 @@ layer.style.visibility="hidden";
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
 
 <% if current_user==0 %>
-<table align="right">
+<table align="right" style="font-size:10px">
   <tr style="text-align:right">
     <td width=40><%=link_to '수정', edit_shop_path(@shop) %></td>
     <td width=40><%=link_to '삭제', shop_path(@shop), method: :delete %></td>
@@ -46,7 +46,7 @@ layer.style.visibility="hidden";
 </table>
 <% end %>
 
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<table rules="rows" width="100%"  style="border:grey;text-align:left;font-size:10px">
   <tr>
     <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "60%", :height => 200) if @shop.image.present? %></td>
   </tr>
@@ -101,7 +101,7 @@ layer.style.visibility="hidden";
   <% end %>
 </table>
 
-<br><p style="text-align:center"><%=link_to '목록', shop_index_path%></p>
+<br><p style="text-align:center;font-size:10px"><%=link_to '목록', shop_index_path%></p>
 
 <div id="popup_layer" 
 style="position:absolute;

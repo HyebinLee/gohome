@@ -15,10 +15,11 @@ class ShopController < ApplicationController
   end
   def new
     @shop = Shop.new
-
+    @shop.count=0
   end
    def create
     @shop=Shop.new(shop_params)
+    @shop.count=0
     if @shop.save
         redirect_to @shop
     else
@@ -75,7 +76,11 @@ class ShopController < ApplicationController
      render 'cart_index_path'
   end
   def buy
-    @shop=Shop.all
+    Cart.all.each do |cart|
+      @shop=Shop.find_by! product: cart.product
+      @shop.count+=1
+      @shop.save
+    end
   end
   def search
     @shop=Shop.where("product LIKE?", "%#{params[:search]}%")
@@ -83,7 +88,7 @@ class ShopController < ApplicationController
   end
   private
     def shop_params
-      params.require(:shop).permit(:image, :type, :product, :price, :text)
+      params.require(:shop).permit(:image, :type, :product, :price, :text, :count, :value)
     end
 
 private
