@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   get '/pay', :controller => 'shop', :action => 'pay'
   get '/inside', :controller => 'shop', :action => 'inside'
   get '/buy', :controller => 'shop', :action => 'buy'
+
+  get '/cup', :controller => 'shop', :action => 'cup'
+  get '/dish', :controller => 'shop', :action => 'dish'
+
+
   get '/find',:controller => 'login', :action =>'find'
   get '/mypages/order',:controller => 'mypage', :action =>'order'
   get '/mypages/inform',:controller => 'mypage', :action =>'inform'
