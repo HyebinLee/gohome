@@ -19,8 +19,12 @@ class ShopController < ApplicationController
   end
    def create
     @shop=Shop.new(shop_params)
+<<<<<<< HEAD
     @shop.count=0
     if @shop.save
+=======
+	 if @shop.save
+>>>>>>> 8fff0edfbc63820fb5de7279c817cb6504ac48e0
         redirect_to @shop
     else
         render 'new'
@@ -85,6 +89,12 @@ class ShopController < ApplicationController
   def search
     @shop=Shop.where("product LIKE?", "%#{params[:search]}%")
   #  @shop=Shop.find_by! product:params[:search]
+  end
+  def cup
+    @shop = Shop.all
+  end
+  def dish
+    @shop = Shop.all
   end
   private
     def shop_params

@@ -1,7 +1,20 @@
 <%=render './form' %>
+<nav class="navbar navbar-default" role="navigation">
+ <div class="container">
+  <ul class="nav navbar-nav navbar-left">
+   <li><a href="/cup">컵/텀블러</a></li>
+	<li><a href="/dish">식기/용기</a></li>
+  </ul>
+ </div>
+</nav>
+
 
 <% if current_user==0 %>
+<<<<<<< HEAD
 <p style="text-align:right;font-size:10px"><%=link_to '글쓰기', new_shop_path %></p>
+=======
+<p style="text-alignaa:right"><%=link_to '글쓰기', new_shop_path %></p>
+>>>>>>> 8fff0edfbc63820fb5de7279c817cb6504ac48e0
 <%else%> <p></p> 
 <% end %>
 <div>---------------------------------------------------------------------------------------------------------------------</div>
@@ -38,3 +51,4 @@
 </td>
 <%end%> </tr></table>
 </div>
+

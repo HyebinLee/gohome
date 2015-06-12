@@ -1,0 +1,22 @@
+<%=render './form' %>
+
+<%if current_user==0 %>
+<p style="text-align:right"><%=link_to '글쓰기', new_shop_path %></p>
+<%else%> <p></p> 
+<% end %>
+<hr>
+<table>
+ <tr>
+   <% @shop.each do |shop| %>
+	<td width=200>
+<div class="panel"><div class="row panel-body" >
+  <div class="col-md-3 text-right">
+<a><%= image_tag(shop.image_url, :width => 120, :height => 170) if shop.image.present? %></a></div>
+ <div class="col-md-3">
+<%= link_to shop.product, shop_path(shop) %>
+ <p><%= shop.price %> won</p>
+</div>
+ </div></div>
+  </td>
+	   <%end%> </tr></table>
+	</div>
