@@ -5,7 +5,7 @@
  <p style="font-size:10px;text-align:center">주문한 상품이 존재하지 않습니다.</p>
 <% else %>
 <p style="font-size:10px">주문 후 시간 : <%=@time%>분</p>
-<p style="font-size:10px">배달 예정 소요 시간 : 6분</p><br>
+<p style="font-size:10px">배달 예정 소요 시간 : 5분</p><br>
 <% if @time<1 %>
  <p style="font-size:10px;text-align:center">배송 준비중 입니다.</p>
 <% else %>
@@ -15,31 +15,31 @@
   <td>상품상태</td>
   <td>담당점소</td>
 </tr>
-  <% if @time>=2 %>
+  <% if @time>=1 %>
     <tr><td>상품인수</td>
       <td>보내시는 고객님으로부터 상품을 인수받았습니다</td>
       <td>강남HUB</td>
     </tr>
   <% end %>
-  <% if @time>=3 %>
+  <% if @time>=2 %>
     <tr><td>상품이동중</td>
       <td>배달지역으로 상품이 이동중입니다</td>
       <td>용산HUB</td>
     </tr>
   <% end %>
-  <%if @time>=4 %>
+  <%if @time>=3 %>
     <tr><td>배달지도착</td>
     <td>고객님의 상품이 배달지에 도착하였습니다.
       <br>(배달예정:피카츄 010-1234-5678)</td>
     <td>노원</td></tr>
   <% end %>
-  <% if @time>=5 %>
+  <% if @time>=4 %>
     <tr><td>배달출발</td>
       <Td>고객님의 상품을 배달할 예정입니다.</br>
         (배달담당:파이리 010-1234-5678)</td>
       <td>서울노원</td></tr>
   <% end %>
-  <% if @time>=6 %>
+  <% if @time>=5 %>
       <tr><td>배달완료</td>
         <td>고객님의 상품이 배달완료 되었습니다.<br>
         (담당사원:꼬부기 010-1234-5678)</td>
