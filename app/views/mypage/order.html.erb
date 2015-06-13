@@ -1,0 +1,25 @@
+<%=render './form' %>
+
+<br><p style="font-size:10px">주문 내역 조회</p>
+<% if @buy.empty? %>
+        <br><p style="font-size:10px">구매한 상품이 존재하지 않습니다.</p>
+<% else %>
+<br><table width=100% align=center rules="rows" style="font-size:10px;rule-color:grey">
+ <tr style="border: 2px solid grey"></tr>
+ <tr style="border: 1px solid grey;background-color:#cccccc">
+  <td>IMAGE</td>
+  <td>PRODUCT</td>
+  <td>PRICE</td>
+  <td>수량</td>
+ </tr>
+
+<% @buy.each do |buy| %>
+<tr style="border: 1px solid grey">
+  <td><%= image_tag(buy.image, :width => 50, :height => 50) %></td>
+  <td><%= buy.product%></td>
+  <td><%= buy.price%></td>
+  <td><%= buy.num %></td>
+ </tr><% end %>
+</table>
+<% end %>
+

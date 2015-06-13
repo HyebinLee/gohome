@@ -1,0 +1,11 @@
+<%=render './form' %>
+<div align = "center" style = "font-size:10px;margin-top : 50px">
+<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">Find Id or Password</h1></div>
+<br><br><br>
+<form action='../send_mail' method="GET">
+ <div>메일주소</div><br>
+ <input type="text" name="email"/><br>
+ <input type="submit" value= "아이디 찾기"/>
+</form>                        
+
+<%= button_tag '비밀번호 찾기' %>

@@ -2,34 +2,35 @@
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">MYPAGE</h1>
 
 <% if current_user==2 %>
-<p>New user? <%=link_to "Sign up now",join_index_path %></p>
-<p>user? <%=link_to "login",login_index_path %></p>
-
+<p style="text-align:center;font-size:10px">New user? <%=link_to "Sign up now",join_index_path %></p>
+<p style="text-align:center;font-size:10px">user? <%=link_to "login",login_index_path %></p>
 <% elsif current_user==0 %>
-<table width=100% align=center rules="rows" style="rule-color:grey">
-  <tr style="border-bottom: 2px solid black">
-    <td>NAME</td>
-    <td>ID</td>
+<table width=100% rules="rows">
+  <tr style="border:2px black solid;"></tr>
+  <tr>
+  <td align=center><a href=mypages/inform><img src="minform.JPG" alt="INFORM"/></a></td>
   </tr>
-
-  <% @join.each do |join| %>
-    <tr>
-      <td><%= join.name %></td>
-      <td><%= link_to join.userid, join_path(join) %></td>
-    </tr>
-  <% end %>
+  <tr>
+  <td align=center><a href=mypages/static><img src="static.JPG" alt="STATIC"/></a></td>
 </table>
 <% else %>
-<p>Your name is <%=username%></p>
-<br><p>구매 물품</p>
-<table width=100% align=center rules="rows" style="rule-color:grey">
-  <tr style="border-bottom: 2px solid black">
-  <td>PICTURE</td>
-  <td>PRODUCT</td>
-  <td>PRICE</td>
+<br>
+<table width=100% rules="rows" >
+  <tr style="border:2px black solid;"></tr>
+  <tr>
+   <td align=center><a href=mypages/order><img src="order.png" alt="ORDER"/></a></td>
   </tr>
+  <tr>
+   <td align=center><a href=mypages/inform><img src="inform.JPG" alt="INFORM"/></a></td>
+  </tr>
+  <tr>
+   <td align=center><a href=mypages/board><img src="board.JPG" alt="BOARD"/></a></td>
+  </tr>
+  <tr>
+   <td align=center><a href=mypages/parcel><img src="parcel.jpg" alt="PARCEL"/></a></td>
+  </tr>
+  <tr style="border:2px black solid;"></tr>
 </table>
 
 <%end%>
-
 

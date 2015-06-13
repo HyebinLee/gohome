@@ -18,7 +18,31 @@ Rails.application.routes.draw do
   get '/logout', :controller => 'first', :action => 'logout'
   get '/message', :controller => 'shop', :action => 'message'
   get '/pay', :controller => 'shop', :action => 'pay'
-  # Example of regular route:
+  get '/inside', :controller => 'shop', :action => 'inside'
+  get '/buy', :controller => 'shop', :action => 'buy'
+
+  get '/cup', :controller => 'shop', :action => 'cup'
+  get '/dish', :controller => 'shop', :action => 'dish'
+  get '/room_deco',:controller =>'shop',:action =>'room_deco'
+  get '/cleans', :controller => 'shop', :action => 'cleans'
+  get '/bathroom', :controller => 'shop', :action => 'bathroom'
+  get '/etc', :controller => 'shop', :action => 'etc'
+
+  get '/shop2', :controller => 'shop', :action => 'shop2'
+  get '/shop3', :controller => 'shop', :action => 'shop3'
+  get '/shop4', :controller => 'shop', :action => 'shop4'
+
+  get '/find',:controller => 'login', :action =>'find'
+  get '/mypages/order',:controller => 'mypage', :action =>'order'
+  get '/mypages/inform',:controller => 'mypage', :action =>'inform'
+  get '/mypages/board',:controller => 'mypage', :action =>'board'
+  get '/mypages/static',:controller => 'mypage', :action =>'static'
+  get '/mypages/parcel',:controller => 'mypage', :action =>'parcel'
+  get '/shops/search', :controller => 'shop', :action => 'search'
+ 
+  get '/send_mail',:controller=>'login',:action=>'send_mail'
+  get '/undefined',:controller=>'first',:action=>'popup'  
+# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

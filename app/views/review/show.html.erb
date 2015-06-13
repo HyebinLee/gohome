@@ -1,14 +1,15 @@
 <%=render './form' %>
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">REVIEW</h1>
+<br>
+<img src="../review.png" width="100%"/>
 
-<table align="right">
+<table align="right" style="font-size:10px">
   <tr style="text-align:right">
     <td width=40><%=link_to '수정', edit_review_path(@review) %></td>
     <td width=40><%=link_to '삭제', review_path(@review), method: :delete %></td>
   </tr>
 </table>
 
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
   <tr>
     <td>PRODUCT</td>
     <th ColSpan="3" style="color:grey;font-weight:lighter">
@@ -37,4 +38,4 @@
   </tr>
 </table>
 
-<br><p style="text-align:center"><%=link_to '목록', review_index_path%></p>
+<br><p style="text-align:center;font-size:10px"><%=link_to '목록', review_index_path%></p>

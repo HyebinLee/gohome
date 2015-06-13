@@ -38,7 +38,7 @@ layer.style.visibility="hidden";
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
 
 <% if current_user==0 %>
-<table align="right">
+<table align="right" style="font-size:10px">
   <tr style="text-align:right">
     <td width=40><%=link_to '수정', edit_shop_path(@shop) %></td>
     <td width=40><%=link_to '삭제', shop_path(@shop), method: :delete %></td>
@@ -46,7 +46,7 @@ layer.style.visibility="hidden";
 </table>
 <% end %>
 
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
   <tr>
     <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "60%", :height => 200) if @shop.image.present? %></td>
   </tr>
@@ -62,20 +62,22 @@ layer.style.visibility="hidden";
   <tr>
     <td>NUM</td>
     <td width="20px"><input type="button" value="-" onclick='Increment(-1);'> </td>
-    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();"></td>
+    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();">
      <td><input type="button" value="+" onclick='Increment(1);'> </td>
   </tr>
-  <tr width="100%" style="text-align:center"> 
-<td><input type="button" value="CART" style="backgroud:white"  onclick="layer_popup()"></td>
+  </tr>
+  <tr width="100%" style="text-align:center">
+  <td><%= button_tag 'CART', :onclick => "alert('장바구니에 상품이 담겼습니다.');", :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}  %></td> 
     <td style="width:30"><%=link_to 'PAY', pay_path%></td>
   </tr>
   <% else %>
     <tr></tr><tr></tr>
   <% end %>
   <tr>
-    <td style="color:grey"><%=@shop.text%></td>
+    <td ColSpan="5" style="color:grey;text-align:center"><br><%= image_tag(@shop.text_url, :width => "60%", :height => 200) if @shop.text.present? %></td>
   </tr>
   <tr><td><br>REVIEW</td></tr>
+  <tr><td><a href="http://www.naver.com/" target="_blank"> >> 생생한 후기 보러가기</a></td></tr>
 <tr><td ColSpan=6><p style="text-align:right"><%=link_to '글쓰기', new_review_path %></p></td></tr>
   <tr style="border-bottom: 2px solid black">
     <td>NO</td>
@@ -87,6 +89,7 @@ layer.style.visibility="hidden";
   </tr>
 
   <% @review.each do |review| %>
+    <% if review.product == @shop.product %>
     <tr>
       <td><%= review.num %></td>
       <td><%= review.product %></td>
@@ -95,10 +98,10 @@ layer.style.visibility="hidden";
       <td><%= review.date %></td>
       <td><%= review.star %></td>
     </tr>
-  <% end %>
+    <% end %><% end %>
 </table>
 
-<br><p style="text-align:center"><%=link_to '목록', shop_index_path%></p>
+<br><p style="text-align:center;font-size:10px"><%=link_to '목록', shop_index_path%></p>
 
 <div id="popup_layer" 
 style="position:absolute;
@@ -112,7 +115,6 @@ visibility:hidden;
 background-color:white;
 "> 
 <table>
-  <% @count=1 %>
   <tr><td>장바구니에 담겼습니다.</td></tr>
   <tr><td>장바구니로 이동하시겠습니까?</td></tr>
   <tr style="text-align:center">

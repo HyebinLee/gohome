@@ -1,12 +1,37 @@
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+  $(function(){
+    //전체선택 체크박스 클릭
+    $("#allCheck").click(function(){
+    //만약 전체 선택 체크박스가 체크된상태일경우
+      if($("#allCheck").prop("checked")) {
+        //해당화면에 전체 checkbox들을 체크해준다
+        $("input[type=checkbox]").prop("checked",true);
+        // 전체선택 체크박스가 해제된 경우
+      } else {
+        //해당화면에 모든 checkbox들의 체크를해제시킨다.
+        $("input[type=checkbox]").prop("checked",false);
+      }
+    })
+  })
+</script>
+
 <%=render './form' %>
-<h1>Cart Page</h1>
-<br><p>장바구니 목록</p>
+<% if current_user==2 %>
+<p style="text-align:center;font-size:10px">New user? <%=link_to "Sign up now",join_index_path %></p>
+<p style="text-align:center;font-size:10px">user? <%=link_to "login",login_index_path %></p>
+<% elsif current_user==0 %>
+<br><p style="text-align:center;font-size:10px">Manager can not buy product!</p>
+<% else %>
+
+<br><p style="font-size:10px">장바구니 목록</p>
 
 <% if @cart.empty? %>
-	<br><p>담긴 상품이 없습니다.</p>
+	<br><p style="font-size:10px">담긴 상품이 없습니다.</p>
 <% else %>
-<br><table width=100% align=center rules="rows" style="rule-color:grey">
+<br><table width=100% align=center rules="rows" style="font-size:10px;rule-color:grey">
  <tr style="border-bottom: 2px solid black">
+  <td><input type="checkbox" id="allCheck"/><td>
   <td>PICTURE</td>
   <td>PRODUCT</td>
   <td>PRICE</td>
@@ -15,10 +40,11 @@
  </tr>
 </table>
 
-<br><table width=100% align=center rules="rows" style="rule-color:black">
+<br><table width=100% align=center rules="rows" style="font-size:10px;rule-color:black">
 <% @cart.each do |cart| %>
   <% if cart.user==username %>
 <tr style="border-bottom: 2px solid black">
+  <td><input type="checkbox" name="check"/></td>
   <td><%= image_tag(cart.image, :width => 50, :height => 50)%></td>
   <td><%=cart.product%></td>
   <td><%=cart.price%></td>
@@ -27,7 +53,7 @@
  </tr><% end %><% end %>
 </table>
 
-<br><div style = "margin-top : 50px;text-align :center"><%=link_to '구매하기',pay_path %></div>
+<br><div style = "margin-top : 50px;text-align :center; font-size:10px"><%=link_to '구매하기',pay_path %></div>
 <% end %>
 
-
+<% end %>

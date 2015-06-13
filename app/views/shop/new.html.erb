@@ -2,6 +2,11 @@
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
 <%= form_for @shop, url: shop_index_path, :html => {:multipart => true} do |f| %>
 <table width="100%" border="1">
+ <tr>
+	<td><%=f.label :category %></td>
+	<th ColSpan="3">
+	<%=f.text_field :value, :style => "width:100%;border:0" %></th>
+ </tr>
   <tr>
     <td><%=f.label :image %></td>
     <td><%=f.file_field :image %> </td>
@@ -21,7 +26,7 @@
   <tr>
     <td RowSpan="2"><%= f.label :text %></td>
     <td>
-      <%= f.text_area :text, :style => "width:100%;border:0" %>
+      <%=f.file_field :text %>
     </td>
   </tr>
 <table>

@@ -3,6 +3,7 @@
 one:
   name: MyText
   userid: MyText
+  email: MyText
   birth: MyText
   pwd: MyText
   address: MyText
@@ -10,6 +11,7 @@ one:
 two:
   name: MyText
   userid: MyText
+  email: MyText
   birth: MyText
   pwd: MyText
   address: MyText

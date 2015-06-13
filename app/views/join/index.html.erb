@@ -23,33 +23,37 @@
 <h1 style="font-family:Serif;color:#4c4c4c;text-align:center; margin-top : 50px">JOIN</h1>
 <%=form_for :join, url:join_index_path do |f| %>
 
-<table align=center>
+<table align=center style="font-size:10px">
   <tr>
     <td><%=f.label :이름 %></td>
-    <td ColSpan="2"><%= f.text_field :name, :style => "width:100%" %></td>
+    <td ColSpan="2"><%= f.text_field :name, :style => "font-size:10px;width:100%" %></td>
   </tr>
   <tr>
     <td><%=f.label :아이디 %></td>
-    <td><%=f.text_field :userid, :style =>"width:95%"%></td>
-    <td><%= button_tag '중복확인',  :data => {:remote => true, :url => url_for(:controller => "join",  :action => "check" ), :with => "'userid=' + $(userid).value"}  %>
+    <td><%=f.text_field :userid, :style =>"font-size:10px;width:95%"%></td>
+    <td><%= button_tag '중복확인', :style => "font-size:10px", :data => {:remote => true, :url => url_for(:controller => "join",  :action => "check" ), :with => "'userid=' + $(userid).value"}  %>
 </td>
   </tr>
   <tr>
+    <td><%=f.label :Email %></td>
+    <td ColSpan="2"><%= f.text_field :email, :style => "width:100%;font-size:10px" %></td>
+  </tr>
+  <tr>
     <td><%=f.label :생년월일 %></td>
-    <td ColSpan="2"><%= f.text_field :birth, :style => "width:100%", :id => "datepicker1"%></td>
+    <td ColSpan="2"><%= f.text_field :birth, :style => "width:100%;font-size:10px", :id => "datepicker1"%></td>
     </td>
 </tr>
   <tr>
     <td><%=f.label :비밀번호 %></td>
-    <td ColSpan="2"><%= f.text_field :pwd, :style => "width:100%" %></td>
+    <td ColSpan="2"><%= f.text_field :pwd, :style => "width:100%;font-size:10px" %></td>
   </tr>
   <tr>
     <td>비밀번호 확인</td>
-    <td ColSpan="2"><input type="text" maxlength=20 name="userpwd2" style="width:100%;"></td>
+    <td ColSpan="2"><input type="text" maxlength=20 name="userpwd2" style="font-size:10px;width:100%;"></td>
   </tr>
   <tr>
     <td><%=f.label :주소 %></td>
-    <td ColSpan="2"><%=f.text_field :address, :style=>"width:100%" %></td>
+    <td ColSpan="2"><%=f.text_field :address, :style=>"width:100%;font-size:10px" %></td>
   </tr>
   <tr>
     <td ColSpan="3"><div style = "margin-top : 20px;text-align :center">

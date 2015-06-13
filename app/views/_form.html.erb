@@ -1,13 +1,32 @@
 <style type="text/css">
 a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
 </style>
+<% if current_user==2 %>
+<script language="Javascript">
+var tmp;
+  if(!tmp){
+  function popup(){
+    var bannerWin=window.open(this.href,"bannerWindow","resizable=no, scrollbars=no, width=250, height=320");
+  browser_name=navigator.appName;
+   if(browser_name=="Netscape"){
+     bannerWin.focus();
+    }
+  }
+  popup();
+  tmp=true;
+  }
+</script>
+<script language="JavaScript">
+  window.moveTo(0,0);
+</script>
+<% end %>
 
 <script>
 $(function(){
     $("#shop").change(function(){
         shoptype=$("#shop option:selected").text()
         //alert("클릭입니다!!");
-        alert(shoptype);
+        //alert(shoptype);
         window.location=$(this).val();
     });
 
@@ -25,36 +44,24 @@ $(function(){
   </tr>
 </table>
 
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">gohome</h1>
+<div align="center"><img src="../gohome.JPG" alt="gohome" align="center" width="200" height="80"/></div>
 
-<table width=100% align=center><tr>
+<table align=right>
+<tr>
+<form action='../shops/search' method="GET">
+<td style="font-size:10px"><input type="text" name="search" size=15 style="border-bottom:1px solid gray;border-top:0px;border-left:0px;border-right:0px;outline:0;background:transparent" ></td>
+<td style="font-size:10px;color:#cccccc"><input type="submit" value="SEARCH" style="background-color:white;border-width:0;font-size:10px"></td>
+</form>
+</tr></table>
+
+<table width=100% align=center style="background:#cccccc"><tr>
 <td><a><%=link_to root_path, controller: 'first' do%>
   <div style="font-family:courier;display:inline">HOME</div>
 <% end %> </a></td>
 
-<td>
-  <div style="width:50px;overflow:hidden;font-weight:lighter"><select name="shop" id="shop" style='background: transparent;border-style : none'>
-    <option value=""/>SHOP</option>
-    <optgroup label="Dining Room"/>
-      <option value="shop"/>컵/텀블러</option>
-      <option value="shop"/>식기/용기</option>
-      <option value="shop"/>조리도구</option>
-      <option value="shop"/>기타</option>
-    </optgroup>
-    <optgroup label="Room"/>
-      <option value="shop"/>시계</option>
-      <option value="shop"/>조명/스탠드</option>
-      <option value="shop"/>테이블/수납</option>
-      <option value="shop"/>청소용품</option>
-      <option value="shop"/>기타</option>
-    </optgroup>
-    <optgroup label="Bath Room"/>
-      <option value="shop"/>타월/매트</option>
-      <option value="shop"/>욕실용품</option>
-      <option value="shop"/>기타</option>
-    </optgroup>
-  </select></div>
-</td>
+<td><a><%=link_to shop_index_path,controller: 'shop' do%>
+  <div style="font-family:courier;display:inline">SHOP</div>
+<% end %> </a></td>
 
 <td><a><%=link_to notice_index_path, controller: 'notice' do%>
   <div style="font-family:courier;display:inline">NOTICE</div>
@@ -72,10 +79,11 @@ $(function(){
   <div style="font-family:courier;display:inline">MYPAGE</div>
 <% end %> </a></td>
 
+<% if current_user==2 %>
 <td><a><%=link_to join_index_path, controller: 'join' do%>
   <div style="font-family:courier;display:inline">JOIN</div>
 <% end %> </a></td>
-
+<% end %>
 <% if current_user!=1 && current_user!=0 %>
   <td><a><%=link_to login_index_path, controller: 'login' do%>
     <div style="font-family:courier;display:inline">LOGIN</div>

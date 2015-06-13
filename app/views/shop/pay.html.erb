@@ -1,20 +1,57 @@
+<script> 
+function layer1_popup(){ 
+var layer1 = document.getElementById("card"); 
+layer1.style.visibility="visible";
+} 
+function layer2_popup(){ 
+var layer2 = document.getElementById("bankbook"); 
+layer2.style.visibility="visible";
+} 
+function layer3_popup(){ 
+var layer3 = document.getElementById("phone"); 
+layer3.style.visibility="visible";
+} 
+window.onload = function() {
+    document.getElementById('csame').style.display = 'none';
+    document.getElementById('cdiff').style.display = 'block';
+}
+
+function same(){
+    document.getElementById('csame').style.display='block';
+     document.getElementById('cdiff').style.display='none';
+}
+function diff(){
+    document.getElementById('csame').style.display='none';
+    document.getElementById('cdiff').style.display='block';
+}
+
+</script>
+
+<script> 
+function hidpopup(){ 
+var layer = document.getElementById("card"); 
+layer.style.visibility="hidden";
+} 
+</script>
+
 <%= render './form' %>
-<p style="text-align:center">주문정보</p>
-<br><p>주문 내역</p>
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<p style="text-align:center;font-size:10px">주문정보</p>
+<br><p style="font-size:10px">주문 내역</p>
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
+<% @cart.each do |cart| %>
   <tr>
     <td>IMAGE</td>
-      <td><%= image_tag(itemimage, :width => 50, :height => 50) %></td>
+      <td><%= image_tag(cart.image, :width => 50, :height => 50) %></td>
     <td>PRODUCT</td>
-    <td style="color:grey"><%=itemproduct%></td>
+    <td style="color:grey"><%=cart.product%></td>
     <td>PRICE</td>
-    <td style="color:grey"><%=itemprice%></td>
-  </tr>
+    <td style="color:grey"><%=cart.price%></td>
+  </tr><%end%>
 </table>
 
 
-<br><p>결제자 정보</p>
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<br><p style="font-size:10px">결제자 정보</p>
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
   <tr>
     <td>NAME</td>
     <td style="color:grey"><%=username%></td>
@@ -29,4 +66,185 @@
   </tr>
 </table>
 
-<br><p>수령자 정보</p>
+<br>
+<br><div style="font-size:10px">배송지 정보</div>
+<div width="100%" align="right" style="text-align:right;font-size:10px;font-color:red">배송지 정보가 주문자 정보와 동일합니까?
+ <input type="radio" name="find" id="same" onclick="javascript:same();">주문자 정보와 동일
+  <input type="radio" name="find" id="diff" onclick="javascript:diff();">새로운 배송지
+</div>
+
+<div id="csame" >
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
+  <tr>
+    <td>NAME</td>
+    <td style="color:grey"><input type="text" name="message" value=<%=username%> style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>E-MAIL</td>
+    <td style="color:grey"><input type="text" name="message"value=<%=useremail%> style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>ADDRESS</td>
+    <td style="color:grey"><input type="text" name="message" value=<%=useraddress%> style="font-size:10px;width:300px"></td>
+  </tr>
+  <tr>
+    <td>배송 메시지</td>
+    <td style="color:grey"><input type="text" name="message" style="font-size:10px;width:300px"></td>
+  </tr>
+
+</table>
+</div>
+
+<div id="cdiff">
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
+  <tr>
+    <td>NAME</td>
+    <td style="color:grey"><input type="text" name="name" style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>E-MAIL</td>
+    <td style="color:grey"><input type="text" name="email" style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>ADDRESS</td>
+    <td style="color:grey"><input type="text" name="addr" style="font-size:10px;width:300px"></td>
+  </tr>
+  <tr>
+    <td>배송 메시지</td>
+    <td style="color:grey"><input type="text" name="message" style="font-size:10px;width:300px"></td>
+  </tr>
+
+</table>
+</div>
+
+
+<br>
+<table style="font-size:10px" width="100%">
+  <tr>
+    <td>결제 정보</td>
+  </tr>
+  <tr>
+    <td><input type="radio" name="pay" value="card" >카드결제</div>
+    <input type="radio" name="pay" value="bankbook">무통장 입금</div>
+    <input type="radio" name="pay" value="phone">휴대폰 결제</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td style="text-align:center"><input type="button" value='결제하기' onclick='show_checked();' /></td>
+  </tr>
+</table>
+
+<script>
+function show_checked() {
+	var obj = document.getElementsByName('pay');
+	var checked_index = -1;
+	var checked_value = '';
+	for( i=0; i<obj.length; i++) {
+		if(obj[0].checked) 
+                	layer1_popup();
+                else if(obj[1].checked)
+			layer2_popup();
+		else if(obj[2].checked)
+			layer3_popup();
+	}
+}
+</script>
+
+<div id="card" 
+style="position:absolute;
+border:double;
+top:450px;
+left:250px;
+width:430px;
+height:160px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+">
+<table style="font-size:10px">
+  <tr>
+    <td width="20" colSpan="2">카드 번호</td>
+    <td width="6px"><input type="text" style="font-size:10px"size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" style="font-size:10px"size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" style="font-size:10px" size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" style="font-size:10px" size="3px"/></td>
+  </tr>
+  <tr>
+    <td width="20" colSpan="2">유효 기간</td>
+    <td width="6px"><input type="text" size="3px" style="font-size:10px"/></td><td> ??</td>
+    <td width="6px"><input type="text" size="3px"style="font-size:10px" /></td><td> ??</td>
+    <td colSpan="3"></td>
+  </tr>
+  <tr>
+    <td width="20" colSpan="2">CVC 번호</td>
+    <td width="6px"><input type="text" size="3px" style="font-size:10px"/></td>
+    <td colSpan="5"></td>
+  </tr>
+  <tr>
+    <td ColSpan="9" style="text-align:center"><%=link_to '확인',buy_path%></td>
+  </tr>
+</table>
+
+</div>
+
+<div id="bankbook" 
+style="position:absolute;
+border:double;
+top:500px;
+left:250px;
+width:300px;
+height:100px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+">
+<table style="font-size:10px">
+  <tr>
+    <td>예금주 : 관리자</td>
+  </tr>
+  <tr>
+    <td>예금 계좌 : 123-4567-1234-55</td>
+  </tr>
+  <tr>
+    <td style="text-align:center"><%=link_to '확인',buy_path%></td>
+  </tr>
+</table>
+</div>
+
+<div id="phone" 
+style="position:absolute;
+border:double;
+top:500px;
+left:250px;
+width:300px;
+height:100px;
+z-index:1;
+visibility:hidden;  
+background-color:white;
+">
+<table style="font-size:10px">
+  <tr>
+    <td>통신사</td>
+    <td colSpan="4"><div><select name="통신사" id="통신사" style='background: transparent;border-style : none;font-size:10px'>
+    <option value=""/>통신사</option>
+    <option value="sk"/>SKT</option>
+    <option value="kt"/>KT</option>
+    <option value="lg"/>LG U+</option>
+    </select></div></td>
+  </tr>
+
+  <tr>
+    <td>휴대폰 번호</td>
+  </tr>
+  <tr>
+    <td><input type="text" size="3px" style="font-size:10px"/></td><td width="1px"> - </td>
+    <td><input type="text" size="3px" style="font-size:10px"/></td><td width="1px"> - </td>
+    <td><input type="text" size="3px" style="font-size:10px"/></td>
+  </tr>
+  <tr>
+    <td ColSpan="7" style="text-align:center"><%=link_to '확인',buy_path%></td>
+  </tr>
+</table>
+</div>
+

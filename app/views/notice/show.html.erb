@@ -1,8 +1,8 @@
 <%=render './form' %>
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">NOTICE</h1>
-
+<br>
+<img src="../info.JPG" width="100%"/>
 <% if current_user==0 %>
-<table align="right">
+<table align="right" style="font-size:10px">
   <tr style="text-align:right">
     <td width=40><%=link_to '수정', edit_notice_path(@notice) %></td>
     <td width=40><%=link_to '삭제', notice_path(@notice), method: :delete %></td>
@@ -10,7 +10,7 @@
 </table>
 <% end %>
 
-<table rules="rows" width="100%"  style="border:grey;text-align:left">
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
   <tr>
     <td>NUM</td>
     <th ColSpan="3" style="color:grey;font-weight:lighter">
@@ -32,4 +32,4 @@
   </tr>
 </table>
 
-<br><p style="text-align:center"><%=link_to '목록', notice_index_path%></p>
+<br><p style="text-align:center;font-size:10px"><%=link_to '목록', notice_index_path%></p>

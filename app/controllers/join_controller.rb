@@ -41,7 +41,7 @@ class JoinController < ApplicationController
 
   private
    def join_params
-	  params.require(:join).permit(:name, :userid, :birth, :pwd,:address)
+	  params.require(:join).permit(:name, :userid, :email, :birth, :pwd,:address)
    end
 end
 
