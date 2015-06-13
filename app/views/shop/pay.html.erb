@@ -11,6 +11,20 @@ function layer3_popup(){
 var layer3 = document.getElementById("phone"); 
 layer3.style.visibility="visible";
 } 
+window.onload = function() {
+    document.getElementById('csame').style.display = 'none';
+    document.getElementById('cdiff').style.display = 'block';
+}
+
+function same(){
+    document.getElementById('csame').style.display='block';
+     document.getElementById('cdiff').style.display='none';
+}
+function diff(){
+    document.getElementById('csame').style.display='none';
+    document.getElementById('cdiff').style.display='block';
+}
+
 </script>
 
 <script> 
@@ -51,6 +65,58 @@ layer.style.visibility="hidden";
     <td style="color:grey"><%=useraddress%></td>
   </tr>
 </table>
+<br>
+<br><div style="font-size:10px">배송지 정보</div>
+<div width="100%" align="right" style="text-align:right;font-size:10px;font-color:red">배송지 정보가 주문자 정보와 동일합니까?
+ <input type="radio" name="find" id="same" onclick="javascript:same();">주문자 정보와 동일
+  <input type="radio" name="find" id="diff" onclick="javascript:diff();">새로운 배송지
+</div>
+
+<div id="csame" >
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
+  <tr>
+    <td>NAME</td>
+    <td style="color:grey"><input type="text" name="message" value=<%=username%> style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>E-MAIL</td>
+    <td style="color:grey"><input type="text" name="message" value=<%=useremail%> style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>ADDRESS</td>
+    <td style="color:grey"><input type="text" name="message" value=<%=useraddress%> style="font-size:10px;width:300px"></td>
+  </tr>
+  <tr>
+    <td>배송 메시지</td>
+    <td style="color:grey"><input type="text" name="message" style="font-size:10px;width:300px"></td>
+  </tr>
+
+</table>
+</div>
+
+<div id="cdiff">
+<table rules="rows" width="100%"  style="border:grey;font-size:10px;text-align:left">
+  <tr>
+    <td>NAME</td>
+    <td style="color:grey"><input type="text" name="name" style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>E-MAIL</td>
+    <td style="color:grey"><input type="text" name="email" style="font-size:10px"></td>
+  </tr>
+  <tr>
+    <td>ADDRESS</td>
+    <td style="color:grey"><input type="text" name="addr" style="font-size:10px;width:300px"></td>
+  </tr>
+  <tr>
+    <td>배송 메시지</td>
+    <td style="color:grey"><input type="text" name="message" style="font-size:10px;width:300px"></td>
+  </tr>
+
+</table>
+</div>
+
+
 <br>
 <table style="font-size:10px" width="100%">
   <tr>
@@ -94,23 +160,23 @@ z-index:1;
 visibility:hidden;  
 background-color:white;
 ">
-<table style="font-szie:10px">
+<table style="font-size:10px">
   <tr>
     <td width="20" colSpan="2">카드 번호</td>
-    <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
-    <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
-    <td width="6px"><input type="text" size="3px"/></td><td width="1px"> - </td>
-    <td width="6px"><input type="text" size="3px"/></td>
+    <td width="6px"><input type="text" style="font-size:10px"size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" style="font-size:10px"size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" style="font-size:10px" size="3px"/></td><td width="1px"> - </td>
+    <td width="6px"><input type="text" style="font-size:10px" size="3px"/></td>
   </tr>
   <tr>
     <td width="20" colSpan="2">유효기간</td>
-    <td width="6px"><input type="text" size="3px"/></td><td> 월 </td>
-    <td width="6px"><input type="text" size="3px"/></td><td> 일 </td>
+    <td width="6px"><input type="text" size="3px" style="font-size:10px"/></td><td> 월 </td>
+    <td width="6px"><input type="text" size="3px"style="font-size:10px" /></td><td> 일 </td>
     <td colSpan="3"></td>
   </tr>
   <tr>
     <td width="20" colSpan="2">CVC 번호</td>
-    <td width="6px"><input type="text" size="3px"/></td>
+    <td width="6px"><input type="text" size="3px" style="font-size:10px"/></td>
     <td colSpan="5"></td>
   </tr>
   <tr>
@@ -170,9 +236,9 @@ background-color:white;
     <td>휴대폰 번호</td>
   </tr>
   <tr>
-    <td><input type="text" size="3px"/></td><td width="1px"> - </td>
-    <td><input type="text" size="3px"/></td><td width="1px"> - </td>
-    <td><input type="text" size="3px"/></td>
+    <td><input type="text" size="3px" style="font-size:10px"/></td><td width="1px"> - </td>
+    <td><input type="text" size="3px" style="font-size:10px"/></td><td width="1px"> - </td>
+    <td><input type="text" size="3px" style="font-size:10px"/></td>
   </tr>
   <tr>
     <td ColSpan="7" style="text-align:center"><%=link_to '확인',buy_path%></td>
