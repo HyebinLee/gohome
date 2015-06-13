@@ -2,8 +2,8 @@
 <p style="text-align:center;color:#4c4c4c">MYPAGE</p>
 
 <% if current_user==2 %>
-<p style="text-align:center">New user? <%=link_to "Sign up now",join_index_path %></p>
-<p style="text-align:center">user? <%=link_to "login",login_index_path %></p>
+<p style="text-align:center;font-size:10px">New user? <%=link_to "Sign up now",join_index_path %></p>
+<p style="text-align:center;font-size:10px">user? <%=link_to "login",login_index_path %></p>
 
 <% elsif current_user==0 %>
 <table width=100% rules="rows">
