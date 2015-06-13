@@ -46,6 +46,7 @@ function hidpopup(){
 				</table>
 				<% end %>
 
+<<<<<<< HEAD
 				<table rules="rows" width="100%"  style="border:grey;text-align:left;font-size:10px">
 				  <tr>
 				      <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "60%", :height => 200) if @shop.image.present? %></td>
@@ -86,6 +87,49 @@ function hidpopup(){
 																																						     <td>DATE</td>
 																																							      <td>평점</td>
 																																									  </tr>
+=======
+<table rules="rows" width="100%"  style="border:grey;text-align:left;font-size:10px">
+  <tr>
+    <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "60%", :height => 200) if @shop.image.present? %></td>
+  </tr>
+  <tr>
+    <td>PRODUCT</td>
+    <td style="color:grey"><%=@shop.product%></td>
+  </tr>
+  <tr>
+    <td>PRICE</td>
+    <td style="color:grey"><%=@shop.price%></td>
+  </tr>
+  <%if current_user==1 %>
+  <tr>
+    <td>NUM</td>
+    <td width="20px"><input type="button" value="-" onclick='Increment(-1);'> </td>
+    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();">
+     <td><input type="button" value="+" onclick='Increment(1);'> </td>
+  </tr>
+  </tr>
+  <tr width="100%" style="text-align:center">
+  <td><%= button_tag 'CART', :onclick => "alert('장바구니에 담겼습니다.');",  :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}%></td> 
+    <td style="width:30"><%=link_to 'PAY', pay_path%></td>
+  </tr>
+  <% else %>
+    <tr></tr><tr></tr>
+  <% end %>
+  <tr>
+    <td ColSpan="5" style="color:grey;text-align:center"><br><%= image_tag(@shop.text_url, :width => "60%", :height => 200) if @shop.text.present? %></td>
+  </tr>
+  <tr><td><br>REVIEW</td></tr>
+  <tr><td><a href="http://www.naver.com/" target="_blank"> >> 생생한 REVIEW 보러가기</a></td></tr>
+<tr><td ColSpan=6><p style="text-align:right"><%=link_to '글쓰기', new_review_path %></p></td></tr>
+  <tr style="border-bottom: 2px solid black">
+    <td>NO</td>
+    <td>PRODUCT</td>
+    <td>SUBJECT</td>
+    <td>NAME</td>
+    <td>DATE</td>
+    <td>평점</td>
+  </tr>
+>>>>>>> 4a14ce50d639a450dee4df367ea1a0471af24dd7
 
 																																									    <% @review.each do |review| %>
 																																										     <% if review.product == @shop.product %>
