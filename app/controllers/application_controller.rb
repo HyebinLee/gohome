@@ -15,16 +15,14 @@ class ApplicationController < ActionController::Base
   helper_method :reviewproduct
  
   helper_method :pop_cnt
-  helper_method :delivery
+#helper_method :delivery
   #helper_method :sendmail
   #helper_method :buyimage
   #helper_method :buyproduct
   #helper_method :buyprice
 
 #  helper_method :shoptype
-  def delivery
-    @sessDelivery=0;
-  end
+    puts $Delivery
   def pop_cnt
     @sessPopcnt=0;
   end
