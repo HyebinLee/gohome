@@ -22,7 +22,17 @@ class ApplicationController < ActionController::Base
   #helper_method :buyprice
 
 #  helper_method :shoptype
+<<<<<<< HEAD
     puts $Delivery
+=======
+  def delivery
+    if session[:time] == nil || session[:time] == -1
+      @sessDelivery=0;
+    else
+      @sessDelivery=Count.find(session[:time]).time
+    end
+  end
+>>>>>>> 70aad5b9540ff53d735d41818cf249ca5f6f820e
   def pop_cnt
     @sessPopcnt=0;
   end

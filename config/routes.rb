@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get '/mypages/inform',:controller => 'mypage', :action =>'inform'
   get '/mypages/board',:controller => 'mypage', :action =>'board'
   get '/mypages/static',:controller => 'mypage', :action =>'static'
+  get '/mypages/parcel',:controller => 'mypage', :action =>'parcel'
   get '/shops/search', :controller => 'shop', :action => 'search'
  
   get '/send_mail',:controller=>'login',:action=>'send_mail'

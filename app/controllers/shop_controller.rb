@@ -82,6 +82,10 @@ class ShopController < ApplicationController
       @shop.save
     end
     Cart.delete_all(user:  username)
+    @count=Count.new
+    @count.time=Time.now.to_i
+    @count.save
+    session[:time]=@count.id
   end
   def search
     @shop=Shop.where("product LIKE?", "%#{params[:search]}%")
