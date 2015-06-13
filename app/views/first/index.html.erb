@@ -1,3 +1,21 @@
 <%=render './form' %>
 <br>
 <img src="background.jpg" alt="" width="100%" height="300"/>
+
+<div>---------------------------------------------------------------------------------------------------------------------</div>
+<table style="font-size:10px">
+  <tr><td>오늘의 추천상품</td></tr>
+ <tr>
+ <% @shop.each do |shop| %>
+    <td width=200>
+<div class="panel"><div class="row panel-body" >
+<div class="col-md-3 text-right">
+<a><%= image_tag(shop.image_url, :width => 120, :height => 170) if shop.image.present? %></a></div>
+<div class="col-md-3">
+<%= link_to shop.product, shop_path(shop) %>
+<p><%= shop.price %> won</p>
+    </div>
+</div></div>
+</td>
+<% end %> </tr></table>
+

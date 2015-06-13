@@ -67,7 +67,7 @@ layer.style.visibility="hidden";
   </tr>
   </tr>
   <tr width="100%" style="text-align:center">
-  <td><%= button_tag 'CART', :onclick => "alert('장바구니에 담겼습니다.');",  :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")} %></td> 
+  <td><%= button_tag 'CART', :onclick => "alert('장바구니에 담겼습니다.');",  :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}%></td> 
     <td style="width:30"><%=link_to 'PAY', pay_path%></td>
   </tr>
   <% else %>
@@ -77,6 +77,7 @@ layer.style.visibility="hidden";
     <td ColSpan="5" style="color:grey;text-align:center"><br><%= image_tag(@shop.text_url, :width => "60%", :height => 200) if @shop.text.present? %></td>
   </tr>
   <tr><td><br>REVIEW</td></tr>
+  <tr><td><a href="http://www.naver.com/" target="_blank"> >> 생생한 REVIEW 보러가기</a></td></tr>
 <tr><td ColSpan=6><p style="text-align:right"><%=link_to '글쓰기', new_review_path %></p></td></tr>
   <tr style="border-bottom: 2px solid black">
     <td>NO</td>
