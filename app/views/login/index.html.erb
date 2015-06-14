@@ -1,15 +1,15 @@
 <%=render './form' %>
 <div align = "center" style = "margin-top : 50px;font-size:10px">
 <div class="row">
-        <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LOGIN</h1>
+        <p style="font-size:10px;text-align:left">로그인</h1>
         <div class="col-md-6 col-md-offset-3">
                 <%=form_tag :action => 'index' do |f| %>
                         <%= label_tag :아이디 %><br>
-                        <%= text_field_tag :userid,params[:userid]%>
+                        <%= text_field_tag :userid,params[:userid], :style=>"font-size:10px"%>
                      <br><div style = "margin-top : 10px"><%= label_tag :비밀번호 %></div>
-              <%= password_field_tag :pwd, params[:pwd] %>
+              <%= password_field_tag :pwd, params[:pwd], :style=>"font-size:10px"%>
 
-              <br><div style = "margin-top : 10px"><%= submit_tag "Log in" %></div>
+              <br><div style = "margin-top : 10px"><%= submit_tag "Log in", :style=>"font-size:10px" %></div>
                 <% end %>
                 <div style = "margin-top : 15px">
                 <p>New user? <%=link_to "Sign up now",join_index_path %></p>

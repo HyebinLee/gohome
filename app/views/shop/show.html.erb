@@ -35,7 +35,7 @@ layer.style.visibility="hidden";
 
 
 <%=render './form' %>
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
+<p style="font-size:10px">상품</p>
 
 <% if current_user==0 %>
 <table align="right" style="font-size:10px">
@@ -52,23 +52,24 @@ layer.style.visibility="hidden";
   </tr>
   <tr>
     <td>PRODUCT</td>
-    <td style="color:grey"><%=@shop.product%></td>
+    <td ColSpan="3" style="text-align:center;color:grey"><%=@shop.product%></td>
   </tr>
   <tr>
     <td>PRICE</td>
-    <td style="color:grey"><%=@shop.price%></td>
+    <td ColSpan="3" style="text-align:center;color:grey"><%=@shop.price%></td>
   </tr>
   <%if current_user==1 %>
   <tr>
     <td>NUM</td>
-    <td width="20px"><input type="button" value="-" onclick='Increment(-1);'> </td>
-    <td><input type="text" name="ps_num" value="1" class="text" maxlength="5" style="width:20px;border:0px" readonly style="border:0"  onkeyup="Increment();">
-     <td><input type="button" value="+" onclick='Increment(1);'> </td>
+    <td ColSpan="3" style="text-align:center">
+      <input type="button" style="background-color:white;font-size:10px"value="-" onclick='Increment(-1);'> 
+      <input type="text" name="ps_num" value="1" class="text" maxlength="3" style="padding-left:20px;font-size:10px;width:30px;border:0px" readonly style="border:0"  onkeyup="Increment();">
+      <input type="button" style="font-size:10px;background-color:white" value="+" onclick='Increment(1);'> </td>
   </tr>
   </tr>
   <tr width="100%" style="text-align:center">
-  <td><%= button_tag 'CART', :onclick => "alert('장바구니에 상품이 담겼습니다.');", :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}  %></td> 
-    <td style="width:30"><%=link_to 'PAY', pay_path%></td>
+  <td ColSpan="2" style="text-align:right"><%= button_tag 'CART', :style =>"background-color:transparent;border:0;font-size:10px", :onclick => "alert('장바구니에 상품이 담겼습니다.');", :data => {:remote => true, :url => url_for(:controller => "shop",  :action => "inside")}  %></td> 
+    <td ColSpan="2"style="text-align:center;width:30"><%=link_to 'PAY', pay_path%></td>
   </tr>
   <% else %>
     <tr></tr><tr></tr>
