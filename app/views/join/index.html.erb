@@ -45,11 +45,11 @@
 </tr>
   <tr>
     <td><%=f.label :비밀번호 %></td>
-    <td><%= f.text_field :pwd, :style => "width:40%;font-size:10px" %></td>
+    <td><%= f.password_field :pwd, :style => "width:40%;font-size:10px" %></td>
   </tr>
   <tr>
     <td>비밀번호 확인</td>
-    <td><input type="text" maxlength=20 name="userpwd2" style="font-size:10px;width:40%;"></td>
+    <td><input type="password" maxlength=20 name="userpwd2" style="font-size:10px;width:40%;"></td>
   </tr>
   <tr style="border-bottom: 2px solid grey">
     <td><%=f.label :주소 %></td>
