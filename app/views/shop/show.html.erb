@@ -46,7 +46,6 @@ function hidpopup(){
 				</table>
 				<% end %>
 
-<<<<<<< HEAD
 				<table rules="rows" width="100%"  style="border:grey;text-align:left;font-size:10px">
 				  <tr>
 				      <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "60%", :height => 200) if @shop.image.present? %></td>
@@ -87,7 +86,6 @@ function hidpopup(){
 																																						     <td>DATE</td>
 																																							      <td>평점</td>
 																																									  </tr>
-=======
 <table rules="rows" width="100%"  style="border:grey;text-align:left;font-size:10px">
   <tr>
     <td style="color:grey" RowSpan=5 width="300px"><%= image_tag(@shop.image_url, :width => "60%", :height => 200) if @shop.image.present? %></td>
@@ -129,7 +127,6 @@ function hidpopup(){
     <td>DATE</td>
     <td>평점</td>
   </tr>
->>>>>>> 4a14ce50d639a450dee4df367ea1a0471af24dd7
 
 																																									    <% @review.each do |review| %>
 																																										     <% if review.product == @shop.product %>

@@ -12,7 +12,6 @@ class LoginController < ApplicationController
   end
 
   def create
-    #join = Join.find_by(userid:params[:userid]).authenticate(params[:pwd])
     join=Join.find_by(userid:params[:userid], pwd:params[:pwd])
     if join.nil?
       flash.now.alert="Invalid email or password"
@@ -20,17 +19,11 @@ class LoginController < ApplicationController
     else
       session[:user_id]=join.id
       redirect_to root_path, :notice => "login"
-      #join=Join.authenticate(params[:userid], params[:pwd])
     end
   end
  
   def find
-   # flash[:alert]="in the cart"
-  #  flash[:alert]="in the cart"
-  #  render :update do |page|
-  #    page.replace_html 'find', :partial => send_mail_path, :object => address
-  #  end
-  end 
+  end
   def send_mail
     address=params[:email]
     user=Join.find_by(email:params[:email])

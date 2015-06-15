@@ -1,15 +1,15 @@
 <%=render './form' %>
 <div align = "center" style = "margin-top : 50px">
-<div class="row">
         <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LOGIN</h1>
-        <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+		  <div class="col-md-6 col-md-offset-3">
                 <%=form_tag :action => 'index' do |f| %>
-                        <%= label_tag :아이디 %><br>
+								<%= label_tag :아이디 %><br>
                         <%= text_field_tag :userid,params[:userid]%>
                      <br><div style = "margin-top : 10px"><%= label_tag :비밀번호 %></div>
               <%= password_field_tag :pwd, params[:pwd] %>
 
-              <br><div style = "margin-top : 10px"><%= submit_tag "Log in" %></div>
+              <br><div style = "margin-top : 10px"><%=submit_tag 'log in','data-no-turbolink' => true %></div>
                 <% end %>
                 <div style = "margin-top : 15px">
                 <p>New user? <%=link_to "Sign up now",join_index_path %></p>

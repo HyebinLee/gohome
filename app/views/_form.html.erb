@@ -71,12 +71,14 @@ var tmp;
 <% end %> </a></td>
 
 
-<td>
 <% if current_user==2 %>
+<td>
 <a><%=link_to join_index_path, controller: 'join' do%>
   <div style="font-family:courier;display:inline">JOIN</div>
-<% end %> </a> <% end %>
+<% end %> </a> 
 </td>
+<% end %>
+
 
 <% if current_user!=1 && current_user!=0 %>
   <td><a><%=link_to login_index_path, controller: 'login' do%>
