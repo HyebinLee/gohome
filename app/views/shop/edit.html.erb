@@ -1,10 +1,16 @@
 <%=render './form' %>
-<h1 style="font-family:Serif;color:#4c4c4c;text-align:center">SHOP</h1>
-<%= form_for @shop, url: shop_path, :html => {:multipart => true}, method: :patch  do |f| %>
+<p style="font-size:10px">상품</p>
+<%= form_for @shop, url: shop_path, :html => {:multipart => true}, method: :patch do |f| %>
 <table width="100%" border="1">
+ <tr>
+	<td><%=f.label :category %></td>
+	<th ColSpan="3">
+	<%=f.text_field :value, :style => "width:100%;border:0" %></th>
+ </tr>
   <tr>
     <td><%=f.label :image %></td>
     <td><%=f.file_field :image %> </td>
+  </tr>
   <tr>
     <td><%= f.label :product %></td>
     <th ColSpan="3">
@@ -20,8 +26,7 @@
   <tr>
     <td RowSpan="2"><%= f.label :text %></td>
     <td>
-      <%= f.file_field :text %> </div>
-      <%= f.text_area :text, :style => "width:100%;border:0" %>
+      <%=f.file_field :text %>
     </td>
   </tr>
 <table>
@@ -33,4 +38,5 @@
   </tr>
 </table>
 <% end %>
+
 

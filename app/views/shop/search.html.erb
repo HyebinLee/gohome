@@ -1,9 +1,15 @@
 <%= render './form' %>
 
 <% if @shop == [] %>
+<<<<<<< HEAD
   <br><p style="text-align:center">검색 결과가 존재하지 않습니다.</p>
 <% else %>
 <table><tr>
+=======
+  <br><p style="text-align:center;font-size:10px">검색명과 일치하는 상품이 존재하지 않습니다.</p>
+<% else %>
+<table style="font-size:10px"><tr>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   <% @shop.each do |shop| %>
     <td width=200>
 <div class="panel"><div class="row panel-body" >
@@ -17,3 +23,7 @@
 </td><% end %></tr></table>
 </div>
 <% end %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc

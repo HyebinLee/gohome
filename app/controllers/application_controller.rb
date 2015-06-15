@@ -15,12 +15,16 @@ class ApplicationController < ActionController::Base
   helper_method :reviewproduct
  
   helper_method :delivery
+<<<<<<< HEAD
   #helper_method :sendmail
   #helper_method :buyimage
   #helper_method :buyproduct
   #helper_method :buyprice
 
 #  helper_method :shoptype
+=======
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   def delivery
     if session[:time] == nil || session[:time] == -1
       @sessDelivery=0;
@@ -28,6 +32,10 @@ class ApplicationController < ActionController::Base
       @sessDelivery=Count.find(session[:time]).time
     end
   end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   def itemimage
     @sessImage=Shop.find(session[:item]).image
   end
@@ -69,7 +77,11 @@ class ApplicationController < ActionController::Base
   def reviewproduct
     @revName=Shop.find(session[:review]).product
   end
+<<<<<<< HEAD
   def shoptype
     @shoptype=$shoptype
   end
+=======
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 end

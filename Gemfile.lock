@@ -172,7 +172,10 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   d3_rails
+<<<<<<< HEAD
   fusioncharts-rails
+=======
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   gmail
   jbuilder (~> 2.0)
   jquery-rails

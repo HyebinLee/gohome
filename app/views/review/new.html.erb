@@ -1,7 +1,10 @@
 <%=render './form' %>
 <br>
 <img src="../review.png" width="100%"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <%= form_for :review, url: review_index_path do |f| %>
 <table width="100%" border="1" style="font-size:10px">
   <tr>
@@ -31,7 +34,11 @@
 
   <tr>
     <td><%= f.label :name %></td>
+<<<<<<< HEAD
     <td><%= username %></td>
+=======
+    <td><%= username%></td>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
     <td><%= f.label :star %></td>
     <td><%= f.select :star, options_for_select(Review::STARS) %></td>
   </tr>

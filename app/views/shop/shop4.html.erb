@@ -1,4 +1,5 @@
 <%=render './form' %>
+<<<<<<< HEAD
 <nav class="navbar navbar-default" role="navigation">
  <div class="container">
   <ul class="nav navbar-nav navbar-left">
@@ -11,12 +12,39 @@
   </ul>
  </div>
 </nav>
+=======
+
+<table>
+<tr>
+<td valign="top">
+<br>
+<nav class="navbar navbar-default" role="navigation">
+ <div class="container" style="font-size:12px">
+  <ul class="nav navbar-nav navbar-left">
+   <li><a href="/cup">cup/tumbler</a></li>
+	<li><a href="/dish">dishes</a></li>
+	<li><a href="/room_deco">room_deco</a></li>
+	<li><a href="/cleans">clean_products</a></li>
+	<li><a href="/bathroom">for_bathroom</a></li>
+	<li><a href="/etc">etc_props</a></li>
+  </ul>
+ </div>
+</nav>
+</td>
+<td><div></div></td><td><div></div></td><td><div></div></td>
+<td><div></div></td><td><div></div></td>
+<td>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 
 <% if current_user==0 %>
 <p style="text-align:right;font-size:10px"><%=link_to '글쓰기', new_shop_path %></p>
 <%else%> <p></p> 
 <% end %>
+<<<<<<< HEAD
 <div>---------------------------------------------------------------------------------------------------------------------</div>
+=======
+<div>--------------------------------------------------------------------------------------------</div>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <table style="font-size:10px">
   <tr><td>BEST 상품</td></tr>
  <tr>
@@ -33,6 +61,7 @@
 </div></div>
 </td>
 <% end %><% end %> </tr></table>
+<<<<<<< HEAD
 <div>---------------------------------------------------------------------------------------------------------------------</div>
 <table style="font-size:10px" width="100%">
 <tr><td>일반 상품</td></tr>
@@ -41,12 +70,27 @@
     <option value="shop2"/>인기상품순</option>
     <option value="shop3"/>가격높은순</option>
     <option value="shop4" selected="selected"/>가격낮은순</option>
+=======
+<div>--------------------------------------------------------------------------------------------</div>
+<table style="font-size:10px" width="100%">
+<tr><td></td></tr>
+<tr><td style="text-align:right"><div><select name="가격 낮은순" onchange="window.open(this.value,'_self');" id="option" style='background: transparent;border-style : none;font-size:10px'>
+    <option value="shop"/>최신 상품순</option>
+    <option value="shop2"/>인기 상품순</option>
+    <option value="shop3"/>가격 높은순</option>
+    <option value="shop4" selected="selected"/>가격 낮은순</option>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
     </select></div></td>
   </tr>
 </table>
 <table style="font-size:10px">
+<<<<<<< HEAD
  <tr>
  <% @shop.each do |shop| %>
+=======
+  <tr>
+  <% @shop.each do |shop| %>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
     <td width=200>
 <div class="panel"><div class="row panel-body" >
 <div class="col-md-3 text-right">
@@ -57,6 +101,14 @@
     </div>
 </div></div>
 </td>
+<<<<<<< HEAD
 <%end%> </tr></table>
 </div>
+=======
+<%end%> </table>
+</div>
+</td>
+</tr>
+</table>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 

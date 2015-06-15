@@ -1,4 +1,5 @@
 class ShopController < ApplicationController
+  $var=0
   def index
     @shop = Shop.all
   end
@@ -7,6 +8,7 @@ class ShopController < ApplicationController
     @shop = Shop.find(params[:id])
     session[:item]=@shop.id
     session[:review]=@shop.id
+<<<<<<< HEAD
     @review = Review.all
 
     @cart=Cart.new
@@ -15,6 +17,9 @@ class ShopController < ApplicationController
     @cart.price=itemprice
     @cart.num=1
     @cart.save  
+=======
+    @review=Review.all
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   end
   def edit
     @shop=Shop.find(params[:id])
@@ -54,10 +59,26 @@ class ShopController < ApplicationController
   def pay
     @join=Join.all
   end
+<<<<<<< HEAD
   def buy
     @shop=Shop.all
   end
 
+=======
+  def inside
+    $var=3
+    @cart=Cart.new
+    @cart.image=itemimage
+    @cart.product=itemproduct
+    @cart.price=itemprice
+    @cart.user=username
+    @cart.num=$var
+    @cart.save
+    render :update do |page|
+      page.replace_html 'cart', :partial => cart_index_path
+    end
+  end
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   private
     def shop_params
       params.require(:shop).permit(:image, :type, :product, :price, :text)
@@ -65,6 +86,6 @@ class ShopController < ApplicationController
 
 private
    def cart_params
-	  params.require(:cart).permit(:image, :product, :price, :num)
+	  params.require(:cart).permit(:image, :product, :price, :num, :user)
    end
 end

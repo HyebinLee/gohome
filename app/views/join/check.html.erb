@@ -1,12 +1,22 @@
 <%=render './form'%>
 <br><br><br><br><br>
 <% if @admin == nil %>
+<<<<<<< HEAD
 <div style="text-align:center">사용 가능한 아이디입니다.</div>
 <% else %>
 <div style="text-align:center">이미 사용중인 아이디입니다.</div>
+=======
+<div style="font-size:10px;text-align:center">사용 가능한 아이디입니다.<div>
+<% else %>
+<div style="text-align:center;font-size:10px">이미 사용중인 아이디입니다.</div>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <script language="Javascript">
   $(userid).value='';
   $(userid).focus();
 </script>
 <%end%>
+<<<<<<< HEAD
 <p style="text-align:center"><a href="javascript:history.back()">확인</a></p>
+=======
+<p style="text-align:center;font-size:10px"><a href="javascript:history.back()">확인</a></p>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc

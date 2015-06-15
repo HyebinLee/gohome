@@ -41,8 +41,13 @@ Rails.application.routes.draw do
   get '/shops/search', :controller => 'shop', :action => 'search'
  
   get '/send_mail',:controller=>'login',:action=>'send_mail'
+<<<<<<< HEAD
   get '/undefined',:controller=>'first',:action=>'popup'
   # Example of regular route:
+=======
+  get '/undefined',:controller=>'first',:action=>'popup'  
+# Example of regular route:
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

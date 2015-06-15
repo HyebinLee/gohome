@@ -1,4 +1,8 @@
 <%=render './form' %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <table>
 <tr>
 <td valign="top">
@@ -19,6 +23,10 @@
 <td><div></div></td><td><div></div></td><td><div></div></td>
 <td><div></div></td><td><div></div></td>
 <td>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <% if current_user==0 %>
 <p style="text-align:right;font-size:10px"><%=link_to '글쓰기', new_shop_path %></p>
 <%else%> <p></p> 
@@ -42,18 +50,32 @@
 <% end %><% end %> </tr></table>
 <div>--------------------------------------------------------------------------------------------</div>
 <table style="font-size:10px" width="100%">
+<<<<<<< HEAD
 <tr><td>일반 상품</td></tr>
 <tr><td style="text-align:right"><div><select name="최신상품순" onchange="window.open(this.value,'_self');" id="option" style='background: transparent;border-style : none;font-size:10px'>
     <option value="shop" selected="selected"/>최신상품순</option>
     <option value="shop2"/>인기상품순</option>
     <option value="shop3"/>가격높은순</option>
     <option value="shop4"/>가격낮은순</option>
+=======
+<tr><td></td></tr>
+<tr><td style="text-align:right"><div><select name="최신 상품순" onchange="window.open(this.value,'_self');" id="option" style='background: transparent;border-style : none;font-size:10px'>
+    <option value="shop" selected="selected"/>최신 상품순</option>
+    <option value="shop2"/>인기 상품순</option>
+    <option value="shop3"/>가격 높은순</option>
+    <option value="shop4"/>가격 낮은순</option>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
     </select></div></td>
   </tr>
 </table>
 <table style="font-size:10px">
+<<<<<<< HEAD
  <tr>
  <% @shop.each do |shop| %>
+=======
+  <tr>
+  <% @shop.each do |shop| %>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
     <td width=200>
 <div class="panel"><div class="row panel-body" >
 <div class="col-md-3 text-right">
@@ -66,7 +88,14 @@
 </td>
 <%end%> </tr></table>
 </div>
+<<<<<<< HEAD
 
 </td>
 </tr>
 </table>
+=======
+</td>
+</tr>
+</table>
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc

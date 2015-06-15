@@ -1,7 +1,6 @@
 <style type="text/css">
 a:link,a:visited,a:active,a:hover {text-decoration:none;color:black;}
 </style>
-
 <% if current_user==2 %>
 <script language="Javascript">
 var tmp;
@@ -20,6 +19,39 @@ var tmp;
 <script language="JavaScript">
   window.moveTo(0,0);
 </script>
+<% end %>
+
+<<<<<<< HEAD
+<% if current_user==2 %>
+<script language="Javascript">
+var tmp;
+  if(!tmp){
+  function popup(){
+    var bannerWin=window.open(this.href,"bannerWindow","resizable=no, scrollbars=no, width=250, height=320");
+  browser_name=navigator.appName;
+   if(browser_name=="Netscape"){
+     bannerWin.focus();
+    }
+  }
+  popup();
+  tmp=true;
+  }
+</script>
+<script language="JavaScript">
+  window.moveTo(0,0);
+=======
+<script>
+$(function(){
+    $("#shop").change(function(){
+        shoptype=$("#shop option:selected").text()
+        //alert("클릭입니다!!");
+        //alert(shoptype);
+        window.location=$(this).val();
+    });
+
+})
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
+</script>
 <%end%>
 
 <table width=100% align=right height=25>
@@ -33,8 +65,13 @@ var tmp;
   </tr>
 </table>
 
+<<<<<<< HEAD
 <div style="display:inline">
 <div align="center"><img src="../gohome.JPG" alt="gohome" align="center" width="200" height="80"/></div>
+=======
+<div align="center"><img src="../gohome.JPG" alt="gohome" align="center" width="200" height="80"/></div>
+
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <table align=right>
 <tr>
 <form action='../shops/search' method="GET">
@@ -42,7 +79,10 @@ var tmp;
 <td style="font-size:10px;color:#cccccc"><input type="submit" value="SEARCH" style="background-color:white;border-width:0;font-size:10px"></td>
 </form>
 </tr></table>
+<<<<<<< HEAD
 </div>
+=======
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 
 <table width=100% align=center style="background:#cccccc"><tr>
 <td><a><%=link_to root_path, controller: 'first' do%>
@@ -52,7 +92,10 @@ var tmp;
 <td><a><%=link_to shop_index_path,controller: 'shop' do%>
   <div style="font-family:courier;display:inline">SHOP</div>
 <% end %> </a></td>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 
 <td><a><%=link_to notice_index_path, controller: 'notice' do%>
   <div style="font-family:courier;display:inline">NOTICE</div>
@@ -70,6 +113,7 @@ var tmp;
   <div style="font-family:courier;display:inline">MYPAGE</div>
 <% end %> </a></td>
 
+<<<<<<< HEAD
 
 <% if current_user==2 %>
 <td>
@@ -80,6 +124,13 @@ var tmp;
 <% end %>
 
 
+=======
+<% if current_user==2 %>
+<td><a><%=link_to join_index_path, controller: 'join' do%>
+  <div style="font-family:courier;display:inline">JOIN</div>
+<% end %> </a></td>
+<% end %>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
 <% if current_user!=1 && current_user!=0 %>
   <td><a><%=link_to login_index_path, controller: 'login' do%>
     <div style="font-family:courier;display:inline">LOGIN</div>

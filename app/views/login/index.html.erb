@@ -1,4 +1,5 @@
 <%=render './form' %>
+<<<<<<< HEAD
 <div align = "center" style = "margin-top : 50px">
         <h1 style="font-family:Serif;color:#4c4c4c;text-align:center">LOGIN</h1>
         <div class="row">
@@ -6,14 +7,32 @@
                 <%=form_tag :action => 'index' do |f| %>
 								<%= label_tag :아이디 %><br>
                         <%= text_field_tag :userid,params[:userid]%>
+=======
+<div align = "center" style = "margin-top : 50px;font-size:10px">
+<div class="row">
+        <p style="font-size:10px;text-align:left">로그인</h1>
+        <div class="col-md-6 col-md-offset-3">
+                <%=form_tag :action => 'index' do |f| %>
+                        <%= label_tag :아이디 %><br>
+                        <%= text_field_tag :userid,params[:userid], :style=>"font-size:10px"%>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
                      <br><div style = "margin-top : 10px"><%= label_tag :비밀번호 %></div>
-              <%= password_field_tag :pwd, params[:pwd] %>
+              <%= password_field_tag :pwd, params[:pwd], :style=>"font-size:10px"%>
 
+<<<<<<< HEAD
               <br><div style = "margin-top : 10px"><%=submit_tag 'log in','data-no-turbolink' => true %></div>
                 <% end %>
                 <div style = "margin-top : 15px">
                 <p>New user? <%=link_to "Sign up now",join_index_path %></p>
                 <p>Forgot ID/PWD? <%=link_to 'Find Id/Passwd',find_path %></p></div>
+=======
+              <br><div style = "margin-top : 10px"><%= submit_tag "Log in", :style=>"font-size:10px" %></div>
+                <% end %>
+                <div style = "margin-top : 15px">
+                <p>New user? <%=link_to "Sign up now",join_index_path %></p>
+                <p>Forgot ID/PWD? <%=link_to 'Find Id/Passwd',find_path %></p>
+                </div>
+>>>>>>> 20ddea8bc575a4e8b2ed468e7bd826e3dd69a2dc
         </div>
 </div>
 </div>
